@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ACCREU Data Catalog</title>
+    <meta
+      name="description"
+      content="Browsable catalog of ACCREU project data holdings on the IIASA Accelerator platform, with links to permanent Zenodo records where available."
+    />
+    <link rel="icon" href="assets/accreu-logo.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script>
+      // Runs before paint so the stored theme applies with no flash of the wrong theme.
+      (function () {
+        try {
+          var saved = localStorage.getItem("accreu-theme");
+          if (saved === "light" || saved === "dark") document.documentElement.setAttribute("data-theme", saved);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-logo-chip"><img class="brand-logo" src="assets/accreu-logo.png" alt="ACCREU project logo" /></span>
+        <div>
+          <p class="eyebrow">IIASA Accelerator &middot; File explorer</p>
+          <h1>ACCREU Data Catalog</h1>
+        </div>
+      </div>
+      <nav class="top-links" aria-label="External links">
+        <a class="sheen" href="https://www.accreu.eu/" target="_blank" rel="noopener">Project site ↗</a>
+        <a class="sheen" href="https://zenodo.org/communities/accreu-project/records" target="_blank" rel="noopener">Zenodo community ↗</a>
+        <button id="themeToggle" class="theme-toggle sheen" type="button" aria-label="Switch between light and dark theme" title="Switch theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+            <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4L5.6 5.6" />
+            </g>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path
+              d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <section class="intro">
+      <dl class="stat-row" id="statRow">
+        <div class="stat-tile stat-tile-loading"><dt>Loading…</dt><dd>&nbsp;</dd></div>
+      </dl>
+    </section>
+
+    <main class="layout">
+      <aside class="sidebar" aria-label="Catalog legend and filters">
+        <h2 class="sidebar-title">Filter</h2>
+        <div class="filter-group" id="filterGroup" role="group" aria-label="Dataset filter">
+          <button type="button" class="filter-chip sheen" data-filter="all" aria-pressed="true">All datasets</button>
+          <button type="button" class="filter-chip sheen" data-filter="zenodo" aria-pressed="false">On Zenodo</button>
+          <button type="button" class="filter-chip sheen" data-filter="s3" aria-pressed="false">Request access</button>
+        </div>
+
+        <h2 class="sidebar-title">Legend</h2>
+        <ul class="legend">
+          <li>
+            <span class="badge badge-zenodo">Zenodo</span>
+            <p>Permanent, citable download (DOI) &mdash; confirmed to be this exact data.</p>
+          </li>
+          <li>
+            <span class="badge badge-contact">Request access</span>
+            <p>Not yet public &mdash; review the data use terms and email the dataset owner.</p>
+          </li>
+        </ul>
+      </aside>
+
+      <section class="browser" aria-label="File browser">
+        <div class="browser-toolbar">
+          <label class="search-label" for="searchInput">Search</label>
+          <input id="searchInput" type="search" placeholder="Folder or filename…" autocomplete="off" />
+          <button id="clearSearch" type="button">Clear</button>
+        </div>
+
+        <div class="status-line" id="statusLine">Loading catalog…</div>
+        <div class="search-results" id="searchResults" hidden></div>
+        <div class="tree" id="tree"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <span class="brand-logo-chip brand-logo-chip-sm"><img class="footer-logo" src="assets/accreu-logo.png" alt="ACCREU project logo" /></span>
+        <p>
+          ACCREU has received funding from the European Union's Horizon Europe research and innovation
+          programme under grant agreement No. 101081358. Views and opinions expressed are those of the
+          author(s) only and do not necessarily reflect those of the European Union.
+        </p>
+      </div>
+      <div class="footer-actions">
+        <a class="report-issue sheen" href="mailto:nakhavali@iiasa.ac.at?subject=ACCREU%20Data%20Catalog%20-%20Issue%20report">
+          Report an issue ↗
+        </a>
+      </div>
+    </footer>
+
+    <dialog id="agreementDialog" class="agreement-dialog">
+      <h2>Data use agreement</h2>
+      <p id="agreementSubtitle" class="agreement-subtitle"></p>
+      <ul class="agreement-terms">
+        <li>This data was produced within the ACCREU project (Horizon Europe grant agreement No. 101081358).</li>
+        <li>Cite the ACCREU project and this dataset in any publication, report, or output that uses it.</li>
+        <li>Do not redistribute the raw files to third parties without permission.</li>
+        <li>Files are provided as-is, for the stated research purpose; direct methodology questions to the data contact.</li>
+      </ul>
+      <div class="agreement-actions">
+        <button id="agreementCancel" type="button" class="agreement-cancel">Cancel</button>
+        <button id="agreementAccept" type="button" class="agreement-accept sheen">I agree — send request</button>
+      </div>
+    </dialog>
+
+    <script src="assets/app.js" defer></script>
+  </body>
+</html>

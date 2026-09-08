@@ -1,0 +1,398 @@
+{
+  "generated_at": "2026-09-08T16:03:04.903Z",
+  "source_note": "Generated from an internal export of the IIASA Accelerator (S3) storage for the ACCREU project. The export contained temporary, pre-signed download URLs (valid ~30 minutes); those signatures are intentionally not published here. This catalog lists file names and folder structure only.",
+  "catalog_file": "catalog/paths.txt",
+  "total_files": 22797,
+  "datasets": [
+    {
+      "id": "d2-4-crop-pollination-climate-only",
+      "source_folder": "D2_4_Crop_Pollination_Climate_Only",
+      "label": "Crop Pollination — Climate-Only Scenarios",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
+      "file_count": 14906,
+      "extensions": {
+        "nc": 6142,
+        "tif": 4238,
+        "xml": 2826,
+        "json": 1690,
+        "txt": 4,
+        "r": 2,
+        "csv": 2,
+        "png": 1,
+        "xlsx": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "d2-4-crop-pollination-full-workflow",
+      "source_folder": "D2_4_Crop_Pollination_Full_Workflow",
+      "label": "Crop Pollination — Full Workflow",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
+      "file_count": 6187,
+      "extensions": {
+        "tif": 6026,
+        "gpkg": 153,
+        "csv": 4,
+        "txt": 3,
+        "r": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "flood",
+      "source_folder": "Flood",
+      "label": "Flood Exposure & Impact Model Outputs",
+      "tag": null,
+      "file_count": 535,
+      "extensions": {
+        "csv": 321,
+        "pdf": 146,
+        "tif": 64,
+        "r": 3,
+        "md": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "isimip3b-monthly",
+      "source_folder": "ISIMIP3b_monthly",
+      "label": "ISIMIP3b Monthly Climate Forcing (Europe)",
+      "tag": null,
+      "file_count": 262,
+      "extensions": {
+        "nc": 261,
+        "txt": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "dtu-wildfire-simulations",
+      "source_folder": "DTU_Wildfire_Simulations",
+      "label": "DTU Wildfire Risk Simulations",
+      "tag": null,
+      "file_count": 246,
+      "extensions": {
+        "cpg": 42,
+        "prj": 42,
+        "dbf": 42,
+        "shx": 42,
+        "shp": 42,
+        "qmd": 33,
+        "qix": 2,
+        "md": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "globiom-landcover",
+      "source_folder": "GLOBIOM_LandCover",
+      "label": "GLOBIOM Land Cover Projections",
+      "tag": null,
+      "file_count": 155,
+      "extensions": {
+        "tiff": 64,
+        "xml": 64,
+        "nc": 25,
+        "7z": 1,
+        "txt": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "crop-analysis",
+      "source_folder": "CROP_ANALYSIS",
+      "label": "Crop Area, Production & Revenue Analysis",
+      "tag": null,
+      "file_count": 130,
+      "extensions": {
+        "pdf": 64,
+        "csv": 64,
+        "r": 1,
+        "md": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "wp3-cs3-2-lido-alberoni",
+      "source_folder": "WP3_CS3_2_Lido_Alberoni",
+      "label": "Case Study — Lido di Alberoni",
+      "tag": {
+        "type": "W",
+        "title": "Work Package 3 — Case Study 3.2"
+      },
+      "file_count": 118,
+      "extensions": {
+        "tif": 32,
+        "xml": 32,
+        "gpkg": 30,
+        "cpg": 3,
+        "dbf": 3,
+        "prj": 3,
+        "qmd": 3,
+        "shp": 3,
+        "shx": 3,
+        "txt": 3,
+        "csv": 2,
+        "pdf": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "cwatm-rcp4p5-daily",
+      "source_folder": "cwatm_rcp4p5_daily",
+      "label": "CWatM Daily Discharge — RCP4.5",
+      "tag": null,
+      "file_count": 47,
+      "extensions": {
+        "nc": 46,
+        "txt": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "cmcc-energy",
+      "source_folder": "CMCC_energy",
+      "label": "CMCC Energy Demand Shocks",
+      "tag": null,
+      "file_count": 34,
+      "extensions": {
+        "csv": 33,
+        "docx": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "glofris-flood",
+      "source_folder": "GLOFRIS_flood",
+      "label": "GLOFRIS Flood Risk Model Outputs",
+      "tag": null,
+      "file_count": 27,
+      "extensions": {
+        "xlsx": 26,
+        "docx": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "glofris-nuts3-for-lorenza",
+      "source_folder": "GLOFRIS_NUTS3(for_Lorenza)",
+      "label": "GLOFRIS Flood Risk — NUTS3 Aggregates",
+      "tag": null,
+      "file_count": 24,
+      "extensions": {
+        "xlsx": 24
+      },
+      "zenodo": null
+    },
+    {
+      "id": "globiom-iamc",
+      "source_folder": "GLOBIOM_IAMC",
+      "label": "GLOBIOM IAMC-Template Outputs",
+      "tag": null,
+      "file_count": 23,
+      "extensions": {
+        "csv": 16,
+        "xlsx": 5,
+        "txt": 2
+      },
+      "zenodo": null
+    },
+    {
+      "id": "d2-3-health",
+      "source_folder": "D2_3_Health",
+      "label": "Health Impact Assessment",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.3"
+      },
+      "file_count": 20,
+      "extensions": {
+        "xlsx": 14,
+        "csv": 4,
+        "ds_store": 2
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.21129554",
+          "title": "Future health and economic impacts of extreme heat on older adults"
+        }
+      ]
+    },
+    {
+      "id": "inflation-adjusted",
+      "source_folder": "Inflation_adjusted",
+      "label": "Inflation-Adjusted Economic Data",
+      "tag": null,
+      "file_count": 16,
+      "extensions": {
+        "docx": 8,
+        "xlsx": 8
+      },
+      "zenodo": null
+    },
+    {
+      "id": "cwatm-rcp4p5",
+      "source_folder": "CWatM_RCP4p5",
+      "label": "CWatM Hydrology — RCP4.5",
+      "tag": null,
+      "file_count": 10,
+      "extensions": {
+        "nc": 10
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.13767595",
+          "title": "SSP-aligned projected European water withdrawal/consumption at 5 arcminutes"
+        }
+      ]
+    },
+    {
+      "id": "diva-slr-impact",
+      "source_folder": "DIVA_SLR_Impact",
+      "label": "DIVA — Sea-Level Rise Impact",
+      "tag": null,
+      "file_count": 10,
+      "extensions": {
+        "csv": 9,
+        "md": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.20545890",
+          "title": "DIVACoast model results: sea-level rise impacts and adaptation response"
+        }
+      ]
+    },
+    {
+      "id": "kip-inca-ecosystem-services-evaluation",
+      "source_folder": "KIP_INCA_Ecosystem_Services_Evaluation",
+      "label": "KIP-INCA Ecosystem Services Evaluation",
+      "tag": null,
+      "file_count": 6,
+      "extensions": {
+        "pdf": 3,
+        "txt": 2,
+        "zip": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "cmcc-lab-prod",
+      "source_folder": "CMCC_lab_prod",
+      "label": "CMCC Labour Productivity Shocks",
+      "tag": null,
+      "file_count": 3,
+      "extensions": {
+        "csv": 3
+      },
+      "zenodo": null
+    },
+    {
+      "id": "heatstress",
+      "source_folder": "HeatStress",
+      "label": "Heat Stress Indicators",
+      "tag": null,
+      "file_count": 1,
+      "extensions": {
+        "7z": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "energy-systems-model-aetos",
+      "source_folder": null,
+      "label": "Energy Systems Model (AETOS)",
+      "description": "Technoeconomic energy-system model inputs and outputs across RCP2.6/4.5/7.0 climate scenarios.",
+      "tag": null,
+      "file_count": 23,
+      "extensions": {
+        "txt": 12,
+        "xlsx": 11
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.18771647",
+          "title": "Climate change impacts in EU's energy systems - Energy Systems Model"
+        }
+      ]
+    },
+    {
+      "id": "residential-cooling-energy-demand",
+      "source_folder": null,
+      "label": "Residential Cooling Energy Demand",
+      "description": "Gridded residential air-conditioning ownership and electricity-demand projections, SSP1/2/3/5, 2020-2050.",
+      "tag": null,
+      "file_count": 5,
+      "extensions": {
+        "nc": 3,
+        "zip": 1,
+        "7z": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.18456618",
+          "title": "Global gridded scenarios of residential cooling energy demand to 2050"
+        }
+      ]
+    },
+    {
+      "id": "decadal-bioclim-isimip3b",
+      "source_folder": null,
+      "label": "Decadal BIOCLIM (ISIMIP3b)",
+      "description": "Decadal BIOCLIM variables from ISIMIP3b bias-adjusted climate forcing across 5 GCMs, historical and SSP1-2.6/2-4.5/3-7.0/5-8.5.",
+      "tag": null,
+      "file_count": 6,
+      "extensions": {
+        "zip": 5,
+        "png": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.13259644",
+          "title": "Decadal BIOCLIM estimates based on ISIMIP3b climatic forcing data for the European continent"
+        }
+      ]
+    },
+    {
+      "id": "wildfire-biodiversity-meta-analysis",
+      "source_folder": null,
+      "label": "Wildfire & Biodiversity Meta-Analysis",
+      "description": "Meta-analysis of wildfire effects on European forest fauna and flora abundance, with effect-size estimates.",
+      "tag": null,
+      "file_count": 2,
+      "extensions": {
+        "csv": 1,
+        "xlsx": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.18678145",
+          "title": "Wildfire and Biodiversity Meta-Analysis Dataset (European Forests)"
+        }
+      ]
+    },
+    {
+      "id": "flood-crop-workflow-code",
+      "source_folder": null,
+      "label": "Flood/Crop Workflow Code",
+      "description": "Reproducible workflows for flood exposure, land-use impact, and crop/grassland outcomes across models and RCPs.",
+      "tag": null,
+      "file_count": 1,
+      "extensions": {
+        "zip": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.15923032",
+          "title": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data"
+        }
+      ]
+    }
+  ]
+}
