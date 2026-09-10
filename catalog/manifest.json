@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-08T16:03:04.903Z",
+  "generated_at": "2026-09-09T14:30:59.671Z",
   "source_note": "Generated from an internal export of the IIASA Accelerator (S3) storage for the ACCREU project. The export contained temporary, pre-signed download URLs (valid ~30 minutes); those signatures are intentionally not published here. This catalog lists file names and folder structure only.",
   "catalog_file": "catalog/paths.txt",
-  "total_files": 22797,
+  "total_files": 22808,
   "datasets": [
     {
       "id": "d2-4-crop-pollination-climate-only",
@@ -144,18 +144,6 @@
       "zenodo": null
     },
     {
-      "id": "cwatm-rcp4p5-daily",
-      "source_folder": "cwatm_rcp4p5_daily",
-      "label": "CWatM Daily Discharge — RCP4.5",
-      "tag": null,
-      "file_count": 47,
-      "extensions": {
-        "nc": 46,
-        "txt": 1
-      },
-      "zenodo": null
-    },
-    {
       "id": "cmcc-energy",
       "source_folder": "CMCC_energy",
       "label": "CMCC Energy Demand Shocks",
@@ -237,22 +225,6 @@
       "zenodo": null
     },
     {
-      "id": "cwatm-rcp4p5",
-      "source_folder": "CWatM_RCP4p5",
-      "label": "CWatM Hydrology — RCP4.5",
-      "tag": null,
-      "file_count": 10,
-      "extensions": {
-        "nc": 10
-      },
-      "zenodo": [
-        {
-          "doi": "10.5281/zenodo.13767595",
-          "title": "SSP-aligned projected European water withdrawal/consumption at 5 arcminutes"
-        }
-      ]
-    },
-    {
       "id": "diva-slr-impact",
       "source_folder": "DIVA_SLR_Impact",
       "label": "DIVA — Sea-Level Rise Impact",
@@ -303,6 +275,36 @@
         "7z": 1
       },
       "zenodo": null
+    },
+    {
+      "id": "cwatm-rcp4p5",
+      "source_folder": "cwatm_rcp4p5_daily (daily) + CWatM_RCP4p5 (monthly)",
+      "label": "CWatM Discharge & Runoff — RCP4.5",
+      "tag": null,
+      "file_count": 57,
+      "extensions": {
+        "nc": 56,
+        "txt": 1
+      },
+      "zenodo": null
+    },
+    {
+      "id": "water-demand-sspv3-0-1",
+      "source_folder": null,
+      "label": "water_demand_SSPv3_0_1",
+      "description": "Annual domestic & industrial water withdrawal/consumption at 5 arcminutes: historical 1960-2020 and SSP1/2/3/5 projections to 2100. Not the same data as the CWatM discharge/runoff output above (different variables, annual vs daily/monthly).",
+      "tag": null,
+      "file_count": 11,
+      "extensions": {
+        "nc": 10,
+        "pdf": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.13767595",
+          "title": "SSP-aligned projected European water withdrawal/consumption at 5 arcminutes"
+        }
+      ]
     },
     {
       "id": "energy-systems-model-aetos",

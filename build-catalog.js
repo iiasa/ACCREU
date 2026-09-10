@@ -17,14 +17,12 @@ const NICE_NAMES = {
   GLOBIOM_LandCover: "GLOBIOM Land Cover Projections",
   CROP_ANALYSIS: "Crop Area, Production & Revenue Analysis",
   WP3_CS3_2_Lido_Alberoni: "Case Study — Lido di Alberoni",
-  cwatm_rcp4p5_daily: "CWatM Daily Discharge — RCP4.5",
   CMCC_energy: "CMCC Energy Demand Shocks",
   GLOFRIS_flood: "GLOFRIS Flood Risk Model Outputs",
   "GLOFRIS_NUTS3(for_Lorenza)": "GLOFRIS Flood Risk — NUTS3 Aggregates",
   GLOBIOM_IAMC: "GLOBIOM IAMC-Template Outputs",
   D2_3_Health: "Health Impact Assessment",
   Inflation_adjusted: "Inflation-Adjusted Economic Data",
-  CWatM_RCP4p5: "CWatM Hydrology — RCP4.5",
   DIVA_SLR_Impact: "DIVA — Sea-Level Rise Impact",
   KIP_INCA_Ecosystem_Services_Evaluation: "KIP-INCA Ecosystem Services Evaluation",
   CMCC_lab_prod: "CMCC Labour Productivity Shocks",
@@ -53,11 +51,24 @@ const ZENODO = {
     doi: "10.5281/zenodo.21129554",
     title: "Future health and economic impacts of extreme heat on older adults",
   },
-  CWatM_RCP4p5: {
-    doi: "10.5281/zenodo.13767595",
-    title: "SSP-aligned projected European water withdrawal/consumption at 5 arcminutes",
-  },
 };
+
+// CWatM discharge/runoff output that Amanda uploaded to the Accelerator, split
+// across two S3 top-level folders by temporal resolution. Combined into one
+// dataset row with "daily"/"monthly" subfolders instead of two separate rows
+// — it's the same model run, just two output frequencies. No Zenodo match:
+// the CWatM data itself only lives on the Accelerator (see ZENODO_ONLY below
+// for the separate, unrelated water-demand Zenodo record).
+const MERGE_GROUPS = [
+  {
+    id: "cwatm-rcp4p5",
+    label: "CWatM Discharge & Runoff — RCP4.5",
+    members: [
+      { sub: "daily", top: "cwatm_rcp4p5_daily" },
+      { sub: "monthly", top: "CWatM_RCP4p5" },
+    ],
+  },
+];
 
 // Related ACCREU Zenodo records that do NOT correspond file-for-file to any of
 // the 20 Accelerator folders above (different temporal resolution, different
@@ -67,6 +78,26 @@ const ZENODO = {
 // (https://zenodo.org/api/records/<id>), so these rows can be browsed the
 // same way as an Accelerator folder.
 const ZENODO_ONLY = [
+  {
+    label: "water_demand_SSPv3_0_1",
+    doi: "10.5281/zenodo.13767595",
+    title: "SSP-aligned projected European water withdrawal/consumption at 5 arcminutes",
+    description:
+      "Annual domestic & industrial water withdrawal/consumption at 5 arcminutes: historical 1960-2020 and SSP1/2/3/5 projections to 2100. Not the same data as the CWatM discharge/runoff output above (different variables, annual vs daily/monthly).",
+    files: [
+      "historical_dom_year_millionm3_5min_Europe_1960_2020.nc",
+      "historical_ind_year_millionm3_5min_Europe_1960_2020.nc",
+      "ssp1_dom_year_millionm3_5min_Europe_2020_2100.nc",
+      "ssp1_ind_year_millionm3_5min_Europe_2020_2100.nc",
+      "ssp2_dom_year_millionm3_5min_Europe_2020_2100.nc",
+      "ssp2_ind_year_millionm3_5min_Europe_2020_2100.nc",
+      "ssp3_dom_year_millionm3_5min_Europe_2020_2100.nc",
+      "ssp3_ind_year_millionm3_5min_Europe_2020_2100.nc",
+      "ssp5_dom_year_millionm3_5min_Europe_2020_2100.nc",
+      "ssp5_ind_year_millionm3_5min_Europe_2020_2100.nc",
+      "Readme-Data and Methods.pdf",
+    ],
+  },
   {
     label: "Energy Systems Model (AETOS)",
     doi: "10.5281/zenodo.18771647",
@@ -150,7 +181,11 @@ for (const line of lines) {
   m.set(ext, (m.get(ext) || 0) + 1);
 }
 
-const tops = [...folderPaths.keys()].sort((a, b) => folderPaths.get(b).length - folderPaths.get(a).length);
+const mergedTops = new Set(MERGE_GROUPS.flatMap((g) => g.members.map((m) => m.top)));
+
+const tops = [...folderPaths.keys()]
+  .filter((t) => !mergedTops.has(t))
+  .sort((a, b) => folderPaths.get(b).length - folderPaths.get(a).length);
 
 const allPaths = [];
 const datasets = [];
@@ -169,6 +204,34 @@ for (const top of tops) {
     file_count: paths.length,
     extensions: Object.fromEntries(extCounts),
     zenodo: ZENODO[top] ? [ZENODO[top]] : null,
+  });
+}
+
+for (const group of MERGE_GROUPS) {
+  const extCounts = new Map();
+  const paths = [];
+  const sourceNames = [];
+
+  for (const { sub, top } of group.members) {
+    const rawPaths = folderPaths.get(top) || [];
+    for (const p of rawPaths) paths.push(`${group.id}/${sub}/${p.slice(top.length + 1)}`);
+
+    const em = folderExt.get(top);
+    if (em) for (const [ext, count] of em) extCounts.set(ext, (extCounts.get(ext) || 0) + count);
+    sourceNames.push(`${top} (${sub})`);
+  }
+
+  paths.sort();
+  allPaths.push(...paths);
+
+  datasets.push({
+    id: group.id,
+    source_folder: sourceNames.join(" + "),
+    label: group.label,
+    tag: null,
+    file_count: paths.length,
+    extensions: Object.fromEntries([...extCounts.entries()].sort((a, b) => b[1] - a[1])),
+    zenodo: null,
   });
 }
 
