@@ -1,13 +1,14 @@
 {
-  "generated_at": "2026-09-09T14:30:59.671Z",
+  "generated_at": "2026-09-10T12:46:12.784Z",
   "source_note": "Generated from an internal export of the IIASA Accelerator (S3) storage for the ACCREU project. The export contained temporary, pre-signed download URLs (valid ~30 minutes); those signatures are intentionally not published here. This catalog lists file names and folder structure only.",
   "catalog_file": "catalog/paths.txt",
-  "total_files": 22808,
+  "total_files": 22535,
   "datasets": [
     {
       "id": "d2-4-crop-pollination-climate-only",
       "source_folder": "D2_4_Crop_Pollination_Climate_Only",
       "label": "Crop Pollination — Climate-Only Scenarios",
+      "description": "14,906 files in 2 subfolders: pollination_demand, pollination_potential\n\nFile types: 6,142 NC, 4,238 TIF, 2,826 XML, 1,690 JSON, 4 TXT, 2 R, …",
       "tag": {
         "type": "D",
         "title": "Deliverable 2.4"
@@ -30,6 +31,7 @@
       "id": "d2-4-crop-pollination-full-workflow",
       "source_folder": "D2_4_Crop_Pollination_Full_Workflow",
       "label": "Crop Pollination — Full Workflow",
+      "description": "6,187 files in 3 subfolders: Crop_Pollination_Supply_Raw_SDMs, D2_4_Crop_Pollination_Flow, D2_4_Crop_Pollination_Supply\n\nFile types: 6,026 TIF, 153 GPKG, 4 CSV, 3 TXT, 1 R",
       "tag": {
         "type": "D",
         "title": "Deliverable 2.4"
@@ -48,6 +50,7 @@
       "id": "flood",
       "source_folder": "Flood",
       "label": "Flood Exposure & Impact Model Outputs",
+      "description": "535 files in 6 subfolders: R_scripts, csv, grass_data_analysis, loss_analysis, plots, rasters\n\nFile types: 321 CSV, 146 PDF, 64 TIF, 3 R, 1 MD",
       "tag": null,
       "file_count": 535,
       "extensions": {
@@ -63,6 +66,7 @@
       "id": "isimip3b-monthly",
       "source_folder": "ISIMIP3b_monthly",
       "label": "ISIMIP3b Monthly Climate Forcing (Europe)",
+      "description": "262 files in 5 subfolders: historical, ssp126, ssp245, ssp370, ssp585\n\nFile types: 261 NC, 1 TXT",
       "tag": null,
       "file_count": 262,
       "extensions": {
@@ -75,6 +79,7 @@
       "id": "dtu-wildfire-simulations",
       "source_folder": "DTU_Wildfire_Simulations",
       "label": "DTU Wildfire Risk Simulations",
+      "description": "246 files in 3 subfolders: Central, North, South\n\nFile types: 42 CPG, 42 PRJ, 42 DBF, 42 SHX, 42 SHP, 33 QMD, …",
       "tag": null,
       "file_count": 246,
       "extensions": {
@@ -90,38 +95,10 @@
       "zenodo": null
     },
     {
-      "id": "globiom-landcover",
-      "source_folder": "GLOBIOM_LandCover",
-      "label": "GLOBIOM Land Cover Projections",
-      "tag": null,
-      "file_count": 155,
-      "extensions": {
-        "tiff": 64,
-        "xml": 64,
-        "nc": 25,
-        "7z": 1,
-        "txt": 1
-      },
-      "zenodo": null
-    },
-    {
-      "id": "crop-analysis",
-      "source_folder": "CROP_ANALYSIS",
-      "label": "Crop Area, Production & Revenue Analysis",
-      "tag": null,
-      "file_count": 130,
-      "extensions": {
-        "pdf": 64,
-        "csv": 64,
-        "r": 1,
-        "md": 1
-      },
-      "zenodo": null
-    },
-    {
       "id": "wp3-cs3-2-lido-alberoni",
       "source_folder": "WP3_CS3_2_Lido_Alberoni",
       "label": "Case Study — Lido di Alberoni",
+      "description": "118 files in 5 subfolders: alberoni_habitats, alberoni_natura2000_shapefile, digital_elevation_model, lido_DIVA_outputs, lido_sea_level_rise_calculated\n\nFile types: 32 TIF, 32 XML, 30 GPKG, 3 CPG, 3 DBF, 3 PRJ, …",
       "tag": {
         "type": "W",
         "title": "Work Package 3 — Case Study 3.2"
@@ -147,6 +124,7 @@
       "id": "cmcc-energy",
       "source_folder": "CMCC_energy",
       "label": "CMCC Energy Demand Shocks",
+      "description": "34 files in 2 subfolders: ac_investments, hourly_model\n\nFile types: 33 CSV, 1 DOCX",
       "tag": null,
       "file_count": 34,
       "extensions": {
@@ -159,6 +137,7 @@
       "id": "glofris-flood",
       "source_folder": "GLOFRIS_flood",
       "label": "GLOFRIS Flood Risk Model Outputs",
+      "description": "27 files, no subfolders\n\nFile types: 26 XLSX, 1 DOCX",
       "tag": null,
       "file_count": 27,
       "extensions": {
@@ -171,6 +150,7 @@
       "id": "glofris-nuts3-for-lorenza",
       "source_folder": "GLOFRIS_NUTS3(for_Lorenza)",
       "label": "GLOFRIS Flood Risk — NUTS3 Aggregates",
+      "description": "24 files, no subfolders\n\nFile types: 24 XLSX",
       "tag": null,
       "file_count": 24,
       "extensions": {
@@ -182,6 +162,7 @@
       "id": "globiom-iamc",
       "source_folder": "GLOBIOM_IAMC",
       "label": "GLOBIOM IAMC-Template Outputs",
+      "description": "23 files in 2 subfolders: Archive, NUTS2\n\nFile types: 16 CSV, 5 XLSX, 2 TXT",
       "tag": null,
       "file_count": 23,
       "extensions": {
@@ -195,6 +176,7 @@
       "id": "d2-3-health",
       "source_folder": "D2_3_Health",
       "label": "Health Impact Assessment",
+      "description": "20 files in 4 subfolders: Annual_mortality, Avoidable costs due to AC, Morbidity, Mortality_Costs_EUR\n\nFile types: 14 XLSX, 4 CSV, 2 DS_STORE",
       "tag": {
         "type": "D",
         "title": "Deliverable 2.3"
@@ -205,17 +187,13 @@
         "csv": 4,
         "ds_store": 2
       },
-      "zenodo": [
-        {
-          "doi": "10.5281/zenodo.21129554",
-          "title": "Future health and economic impacts of extreme heat on older adults"
-        }
-      ]
+      "zenodo": null
     },
     {
       "id": "inflation-adjusted",
       "source_folder": "Inflation_adjusted",
       "label": "Inflation-Adjusted Economic Data",
+      "description": "16 files in 4 subfolders: Outputs (Agri), Outputs (DIVA), Outputs (Energy), Outputs (GLOFRIS)\n\nFile types: 8 DOCX, 8 XLSX",
       "tag": null,
       "file_count": 16,
       "extensions": {
@@ -228,23 +206,20 @@
       "id": "diva-slr-impact",
       "source_folder": "DIVA_SLR_Impact",
       "label": "DIVA — Sea-Level Rise Impact",
+      "description": "10 files in 2 subfolders: NLD_pl10_000_correction, flood_protection_standards_paradigm_runs\n\nFile types: 9 CSV, 1 MD",
       "tag": null,
       "file_count": 10,
       "extensions": {
         "csv": 9,
         "md": 1
       },
-      "zenodo": [
-        {
-          "doi": "10.5281/zenodo.20545890",
-          "title": "DIVACoast model results: sea-level rise impacts and adaptation response"
-        }
-      ]
+      "zenodo": null
     },
     {
       "id": "kip-inca-ecosystem-services-evaluation",
       "source_folder": "KIP_INCA_Ecosystem_Services_Evaluation",
       "label": "KIP-INCA Ecosystem Services Evaluation",
+      "description": "6 files in 1 subfolder: KIP_INCA_2021_Updates\n\nFile types: 3 PDF, 2 TXT, 1 ZIP",
       "tag": null,
       "file_count": 6,
       "extensions": {
@@ -258,6 +233,7 @@
       "id": "cmcc-lab-prod",
       "source_folder": "CMCC_lab_prod",
       "label": "CMCC Labour Productivity Shocks",
+      "description": "3 files, no subfolders\n\nFile types: 3 CSV",
       "tag": null,
       "file_count": 3,
       "extensions": {
@@ -266,20 +242,10 @@
       "zenodo": null
     },
     {
-      "id": "heatstress",
-      "source_folder": "HeatStress",
-      "label": "Heat Stress Indicators",
-      "tag": null,
-      "file_count": 1,
-      "extensions": {
-        "7z": 1
-      },
-      "zenodo": null
-    },
-    {
       "id": "cwatm-rcp4p5",
       "source_folder": "cwatm_rcp4p5_daily (daily) + CWatM_RCP4p5 (monthly)",
       "label": "CWatM Discharge & Runoff — RCP4.5",
+      "description": "57 files in 2 subfolders: daily, monthly\n\nFile types: 56 NC, 1 TXT",
       "tag": null,
       "file_count": 57,
       "extensions": {
@@ -292,7 +258,7 @@
       "id": "water-demand-sspv3-0-1",
       "source_folder": null,
       "label": "water_demand_SSPv3_0_1",
-      "description": "Annual domestic & industrial water withdrawal/consumption at 5 arcminutes: historical 1960-2020 and SSP1/2/3/5 projections to 2100. Not the same data as the CWatM discharge/runoff output above (different variables, annual vs daily/monthly).",
+      "description": "The dataset provides annual water withdrawal and consumption estimates for Europe at a spatial resolution of 5 arcminutes, covering the periods 1960-2020 (historical) and 2020-2100 for four SSPs (1, 2, 3, and 5).",
       "tag": null,
       "file_count": 11,
       "extensions": {
@@ -310,7 +276,7 @@
       "id": "energy-systems-model-aetos",
       "source_folder": null,
       "label": "Energy Systems Model (AETOS)",
-      "description": "Technoeconomic energy-system model inputs and outputs across RCP2.6/4.5/7.0 climate scenarios.",
+      "description": "This repository contains datasets and model inputs developed within the ACCREU project to assess climate change impacts on European energy systems. The data support technoeconomic modelling of electricity demand and supply under multiple climate scenarios (RCP2.6, RCP4.5, and RCP7.0), including impacts on renewable generation, hydropower availability, thermal plant performance, and temperature-driven demand changes.",
       "tag": null,
       "file_count": 23,
       "extensions": {
@@ -328,7 +294,7 @@
       "id": "residential-cooling-energy-demand",
       "source_folder": null,
       "label": "Residential Cooling Energy Demand",
-      "description": "Gridded residential air-conditioning ownership and electricity-demand projections, SSP1/2/3/5, 2020-2050.",
+      "description": "This repository hosts output data for SSPs126, 245, 370 and 585 on the estimated and future projected ownership of residential air conditioning (% of households), the related energy consumption (TWh/yr.), and the underlying population counts (useful to quantify the per-capita average consumption or the headcount of people affected by the cooling gap).",
       "tag": null,
       "file_count": 5,
       "extensions": {
@@ -347,7 +313,7 @@
       "id": "decadal-bioclim-isimip3b",
       "source_folder": null,
       "label": "Decadal BIOCLIM (ISIMIP3b)",
-      "description": "Decadal BIOCLIM variables from ISIMIP3b bias-adjusted climate forcing across 5 GCMs, historical and SSP1-2.6/2-4.5/3-7.0/5-8.5.",
+      "description": "This dataset contains BIOCLIM variables (plus huss, sfcwind, rsds) which have been prepared and calculated from the original ISIMIP3b bias-adjusted climate forcing data from 5 GCM models (obtained on 2023-08-07).",
       "tag": null,
       "file_count": 6,
       "extensions": {
@@ -365,7 +331,7 @@
       "id": "wildfire-biodiversity-meta-analysis",
       "source_folder": null,
       "label": "Wildfire & Biodiversity Meta-Analysis",
-      "description": "Meta-analysis of wildfire effects on European forest fauna and flora abundance, with effect-size estimates.",
+      "description": "Here is the dataset of a meta-analysis examining the effects of fires on taxa abundances within various European forest fauna and flora. The analysis focuses on how different taxa respond to fire, providing quantitative estimates of these responses using effect sizes. The dataset provides 2192 unique effect sizes from 819 unique taxa reported in 29 studies investigating wild or prescribed fires.",
       "tag": null,
       "file_count": 2,
       "extensions": {
@@ -383,7 +349,7 @@
       "id": "flood-crop-workflow-code",
       "source_folder": null,
       "label": "Flood/Crop Workflow Code",
-      "description": "Reproducible workflows for flood exposure, land-use impact, and crop/grassland outcomes across models and RCPs.",
+      "description": "A comprehensive, reproducible suite of workflows for assessing flood exposure, land-use impacts, and crop-area, production, and revenue outcomes across multiple models, RCPs, and adaptation or mitigation strategies (snapshot years 2020-2050).",
       "tag": null,
       "file_count": 1,
       "extensions": {
@@ -393,6 +359,41 @@
         {
           "doi": "10.5281/zenodo.15923032",
           "title": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data"
+        }
+      ]
+    },
+    {
+      "id": "extreme-heat-health-economic-impacts",
+      "source_folder": null,
+      "label": "Extreme Heat Health & Economic Impacts",
+      "description": "This dataset contains information collected during the ACCREU (Assessment of Climate Change in Europe) study, carried out at BC3 (Basque Centre for Climate Change) in 2025. The dataset includes six files in Excel format that record estimates of mortality, morbidity and their costs attributable to extreme heat in Europe, at NUTS3 level for people over 65 years of age. These estimates have been made for a historical period and for projections in 2030, 2050 and 2070 under four different climate scenarios (combinations of SSP and RCP).",
+      "tag": null,
+      "file_count": 6,
+      "extensions": {
+        "xlsx": 6
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.21129554",
+          "title": "Future health and economic impacts of extreme heat on older adults: a subnational analysis for Europe"
+        }
+      ]
+    },
+    {
+      "id": "divacoast-sea-level-rise-impacts",
+      "source_folder": null,
+      "label": "DIVACoast Sea-Level Rise Impacts",
+      "description": "This dataset contains modelled outputs of the DIVACoast model on flood risk driven by sea-level rise and adaptation response from the ACCREU EU project, structured across three spatial scales: NUTS2/GADM1 (subnational), country and global.",
+      "tag": null,
+      "file_count": 7,
+      "extensions": {
+        "csv": 6,
+        "md": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.20545890",
+          "title": "DIVACoast model results: sea-level rise impacts and adaptation response under different adaptation paradigms"
         }
       ]
     }

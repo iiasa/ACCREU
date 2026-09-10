@@ -828,6 +828,54 @@ summary:focus-visible {
   white-space: nowrap;
 }
 
+.dataset-desc-hint {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid color-mix(in srgb, var(--teal) 45%, transparent);
+  border-radius: 5px;
+  background: transparent;
+  padding: 0;
+  color: var(--teal-dark);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dataset-desc-hint:hover {
+  background: color-mix(in srgb, var(--teal) 16%, transparent);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--teal) 30%, transparent);
+}
+
+.desc-popover {
+  max-width: 380px;
+  margin: auto;
+  padding: 18px 20px;
+  border: 1px solid color-mix(in srgb, var(--teal) 55%, transparent);
+  border-radius: 12px;
+  background: var(--panel-solid);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-line;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--teal) 35%, transparent),
+    0 0 44px color-mix(in srgb, var(--teal) 45%, transparent), 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.desc-popover::backdrop {
+  background: rgba(4, 6, 10, 0.65);
+  backdrop-filter: blur(2px);
+}
+
 .dataset-tag-icon {
   flex: none;
   display: inline-flex;
@@ -851,41 +899,6 @@ summary:focus-visible {
   box-shadow: 0 0 12px color-mix(in srgb, var(--teal) 30%, transparent);
 }
 
-.dataset-subline {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  min-width: 0;
-  font-size: 11.5px;
-  font-weight: 500;
-  color: var(--muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-}
-
-.dataset-tag-desc {
-  flex: none;
-}
-
-.dataset-raw-name {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
-  flex: 0 1 auto;
-}
-
-.dataset-subline .dataset-raw-name:not(:first-child)::before {
-  content: "· ";
-}
-
-.dataset-desc-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
-  flex: 0 1 auto;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-}
 
 .count-pill {
   flex: none;

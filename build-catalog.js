@@ -14,8 +14,6 @@ const NICE_NAMES = {
   Flood: "Flood Exposure & Impact Model Outputs",
   ISIMIP3b_monthly: "ISIMIP3b Monthly Climate Forcing (Europe)",
   DTU_Wildfire_Simulations: "DTU Wildfire Risk Simulations",
-  GLOBIOM_LandCover: "GLOBIOM Land Cover Projections",
-  CROP_ANALYSIS: "Crop Area, Production & Revenue Analysis",
   WP3_CS3_2_Lido_Alberoni: "Case Study — Lido di Alberoni",
   CMCC_energy: "CMCC Energy Demand Shocks",
   GLOFRIS_flood: "GLOFRIS Flood Risk Model Outputs",
@@ -26,8 +24,14 @@ const NICE_NAMES = {
   DIVA_SLR_Impact: "DIVA — Sea-Level Rise Impact",
   KIP_INCA_Ecosystem_Services_Evaluation: "KIP-INCA Ecosystem Services Evaluation",
   CMCC_lab_prod: "CMCC Labour Productivity Shocks",
-  HeatStress: "Heat Stress Indicators",
 };
+
+// Accelerator top-level folders dropped from the catalog entirely.
+// - CROP_ANALYSIS: this is the pre-Zenodo working copy of the "Flood/Crop
+//   Workflow Code" record below (10.5281/zenodo.15923032) — same dataset, so
+//   only the Zenodo entry (with its permanent link) is kept.
+// - HeatStress, GLOBIOM_LandCover: removed from the catalog per request.
+const EXCLUDE_TOPS = new Set(["CROP_ANALYSIS", "HeatStress", "GLOBIOM_LandCover"]);
 
 // ACCREU project jargon: D<n>.<m> = Deliverable, WP<n> = Work Package, CS<n>.<m> = Case Study.
 const TAGS = {
@@ -35,22 +39,6 @@ const TAGS = {
   D2_4_Crop_Pollination_Full_Workflow: { type: "D", title: "Deliverable 2.4" },
   D2_3_Health: { type: "D", title: "Deliverable 2.3" },
   WP3_CS3_2_Lido_Alberoni: { type: "W", title: "Work Package 3 — Case Study 3.2" },
-};
-
-// Confirmed Zenodo matches: exactly one per Accelerator folder, kept ONLY where
-// the file naming/format genuinely supports it being the same data (not just the
-// same topic). E.g. a folder named "..._daily" cannot be the same data as a
-// Zenodo record whose files are named "..._year_..." (annual) — different
-// temporal resolution means different files, so no match is recorded for it.
-const ZENODO = {
-  DIVA_SLR_Impact: {
-    doi: "10.5281/zenodo.20545890",
-    title: "DIVACoast model results: sea-level rise impacts and adaptation response",
-  },
-  D2_3_Health: {
-    doi: "10.5281/zenodo.21129554",
-    title: "Future health and economic impacts of extreme heat on older adults",
-  },
 };
 
 // CWatM discharge/runoff output that Amanda uploaded to the Accelerator, split
@@ -70,20 +58,23 @@ const MERGE_GROUPS = [
   },
 ];
 
-// Related ACCREU Zenodo records that do NOT correspond file-for-file to any of
-// the 20 Accelerator folders above (different temporal resolution, different
-// file types, or code rather than data). Listed as their own standalone rows
-// instead of being force-attached to a folder whose actual files differ.
-// `files` is the record's real file listing straight from the Zenodo API
-// (https://zenodo.org/api/records/<id>), so these rows can be browsed the
-// same way as an Accelerator folder.
+// ACCREU Zenodo records that do NOT correspond file-for-file to any Accelerator
+// folder (different temporal resolution, different file types, a curated/
+// cleaned release vs. the raw working folder, or code rather than data).
+// Listed as their own standalone rows instead of being force-attached to a
+// folder whose actual files differ. `files` is the record's real file listing
+// and `description` is verbatim from the Zenodo record's own description
+// (https://zenodo.org/api/records/<id>), trimmed to the lead paragraph where
+// the full text is long — so these rows can be browsed the same way as an
+// Accelerator folder, with the same description shown on Zenodo itself.
 const ZENODO_ONLY = [
   {
     label: "water_demand_SSPv3_0_1",
     doi: "10.5281/zenodo.13767595",
     title: "SSP-aligned projected European water withdrawal/consumption at 5 arcminutes",
+    // Verbatim from the Zenodo record's description (zenodo.org/api/records/13767595).
     description:
-      "Annual domestic & industrial water withdrawal/consumption at 5 arcminutes: historical 1960-2020 and SSP1/2/3/5 projections to 2100. Not the same data as the CWatM discharge/runoff output above (different variables, annual vs daily/monthly).",
+      "The dataset provides annual water withdrawal and consumption estimates for Europe at a spatial resolution of 5 arcminutes, covering the periods 1960-2020 (historical) and 2020-2100 for four SSPs (1, 2, 3, and 5).",
     files: [
       "historical_dom_year_millionm3_5min_Europe_1960_2020.nc",
       "historical_ind_year_millionm3_5min_Europe_1960_2020.nc",
@@ -102,7 +93,9 @@ const ZENODO_ONLY = [
     label: "Energy Systems Model (AETOS)",
     doi: "10.5281/zenodo.18771647",
     title: "Climate change impacts in EU's energy systems - Energy Systems Model",
-    description: "Technoeconomic energy-system model inputs and outputs across RCP2.6/4.5/7.0 climate scenarios.",
+    // Verbatim from the Zenodo record's description (zenodo.org/api/records/18771647).
+    description:
+      "This repository contains datasets and model inputs developed within the ACCREU project to assess climate change impacts on European energy systems. The data support technoeconomic modelling of electricity demand and supply under multiple climate scenarios (RCP2.6, RCP4.5, and RCP7.0), including impacts on renewable generation, hydropower availability, thermal plant performance, and temperature-driven demand changes.",
     files: [
       "ACCREU_BASE.xlsx", "ACCREU_H70_NoTrade.txt", "ACCREU_H70v2_NoTrade.xlsx", "ACCREU_M45.txt",
       "ACCREU_H26.txt", "ACCREU_L70.xlsx", "ACCREU_L45.xlsx", "ACCREU_BASE.txt", "ACCREU_M45.xlsx",
@@ -115,7 +108,9 @@ const ZENODO_ONLY = [
     label: "Residential Cooling Energy Demand",
     doi: "10.5281/zenodo.18456618",
     title: "Global gridded scenarios of residential cooling energy demand to 2050",
-    description: "Gridded residential air-conditioning ownership and electricity-demand projections, SSP1/2/3/5, 2020-2050.",
+    // Verbatim from the Zenodo record's description (zenodo.org/api/records/18456618).
+    description:
+      "This repository hosts output data for SSPs126, 245, 370 and 585 on the estimated and future projected ownership of residential air conditioning (% of households), the related energy consumption (TWh/yr.), and the underlying population counts (useful to quantify the per-capita average consumption or the headcount of people affected by the cooling gap).",
     files: [
       "source_code_data_replication_figures.zip",
       "pop_ssp1_ssp2_ssp3_ssp5_2020_2050.nc",
@@ -128,25 +123,85 @@ const ZENODO_ONLY = [
     label: "Decadal BIOCLIM (ISIMIP3b)",
     doi: "10.5281/zenodo.13259644",
     title: "Decadal BIOCLIM estimates based on ISIMIP3b climatic forcing data for the European continent",
+    // Verbatim from the Zenodo record's description (zenodo.org/api/records/13259644).
     description:
-      "Decadal BIOCLIM variables from ISIMIP3b bias-adjusted climate forcing across 5 GCMs, historical and SSP1-2.6/2-4.5/3-7.0/5-8.5.",
+      "This dataset contains BIOCLIM variables (plus huss, sfcwind, rsds) which have been prepared and calculated from the original ISIMIP3b bias-adjusted climate forcing data from 5 GCM models (obtained on 2023-08-07).",
     files: ["historical.zip", "Screenshot.png", "ssp245.zip", "ssp585.zip", "ssp370.zip", "ssp126.zip"],
   },
   {
     label: "Wildfire & Biodiversity Meta-Analysis",
     doi: "10.5281/zenodo.18678145",
     title: "Wildfire and Biodiversity Meta-Analysis Dataset (European Forests)",
-    description: "Meta-analysis of wildfire effects on European forest fauna and flora abundance, with effect-size estimates.",
+    // Verbatim from the Zenodo record's description (zenodo.org/api/records/18678145), lead paragraph only.
+    description:
+      "Here is the dataset of a meta-analysis examining the effects of fires on taxa abundances within various European forest fauna and flora. The analysis focuses on how different taxa respond to fire, providing quantitative estimates of these responses using effect sizes. The dataset provides 2192 unique effect sizes from 819 unique taxa reported in 29 studies investigating wild or prescribed fires.",
     files: ["data_meta_analysis_gerber_v3.csv", "data_meta_analysis_gerber_v3_study_list.xlsx"],
   },
   {
     label: "Flood/Crop Workflow Code",
     doi: "10.5281/zenodo.15923032",
     title: "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data",
-    description: "Reproducible workflows for flood exposure, land-use impact, and crop/grassland outcomes across models and RCPs.",
+    // Verbatim from the Zenodo record's description (zenodo.org/api/records/15923032).
+    description:
+      "A comprehensive, reproducible suite of workflows for assessing flood exposure, land-use impacts, and crop-area, production, and revenue outcomes across multiple models, RCPs, and adaptation or mitigation strategies (snapshot years 2020-2050).",
     files: ["andrenakhavali/ACCREU-Release.zip"],
   },
+  {
+    label: "Extreme Heat Health & Economic Impacts",
+    doi: "10.5281/zenodo.21129554",
+    title: "Future health and economic impacts of extreme heat on older adults: a subnational analysis for Europe",
+    // Verbatim from the Zenodo record's description (zenodo.org/api/records/21129554).
+    description:
+      "This dataset contains information collected during the ACCREU (Assessment of Climate Change in Europe) study, carried out at BC3 (Basque Centre for Climate Change) in 2025. The dataset includes six files in Excel format that record estimates of mortality, morbidity and their costs attributable to extreme heat in Europe, at NUTS3 level for people over 65 years of age. These estimates have been made for a historical period and for projections in 2030, 2050 and 2070 under four different climate scenarios (combinations of SSP and RCP).",
+    files: [
+      "Heat related morbidity WTP based costs_LoroñoLeturiondo_et_al_2026.xlsx",
+      "Heat-related mortality costs VSL_NUTS3_people over 65_LoroñoLeturiondo_et_al_2026.xlsx",
+      "Heat related morbidity estimates_ NUTS3_people over 65_LoroñoLeturiondo_et_al_2026.xlsx",
+      "Heat related morbidity medical costs_LoroñoLeturiondo_et_al_2026.xlsx",
+      "Heat-related mortality costs VOLY_NUTS3_people over 65_LoroñoLeturiondo_et_al_2026.xlsx",
+      "Heat-related mortality estimates_NUTS3_people over 65_LoroñoLeturiondo_et_al_2026.xlsx",
+    ],
+  },
+  {
+    label: "DIVACoast Sea-Level Rise Impacts",
+    doi: "10.5281/zenodo.20545890",
+    title: "DIVACoast model results: sea-level rise impacts and adaptation response under different adaptation paradigms",
+    // Verbatim from the Zenodo record's description (zenodo.org/api/records/20545890).
+    description:
+      "This dataset contains modelled outputs of the DIVACoast model on flood risk driven by sea-level rise and adaptation response from the ACCREU EU project, structured across three spatial scales: NUTS2/GADM1 (subnational), country and global.",
+    files: [
+      "ACCREU_GADM1_NUT2.csv",
+      "ACCREU_COUNTRY.csv",
+      "ACCREU_COUNTRY_CFPS.csv",
+      "ACCREU_GLOBAL.csv",
+      "ACCREU_GADM1_NUT2_CFPS.csv",
+      "ACCREU_GLOBAL_CFPS.csv",
+      "README.md",
+    ],
+  },
 ];
+
+// Description for Accelerator ("Request access") folders that have no Zenodo
+// abstract: a plain-language, two-part summary of what's actually in them —
+// how the files are organized into subfolders, then what file types they are.
+// `relPaths` are paths relative to the dataset's own root (top-level folder
+// name / merge-group id already stripped) so subfolder names come out clean.
+function describeAccelFolder(relPaths, extCountsSorted, fileCount) {
+  const subfolders = [...new Set(relPaths.filter((p) => p.includes("/")).map((p) => p.split("/")[0]))].sort();
+  const fmt = (n) => n.toLocaleString("en-US");
+
+  const organization = subfolders.length
+    ? `${fmt(fileCount)} files in ${subfolders.length} subfolder${subfolders.length === 1 ? "" : "s"}: ${subfolders.join(", ")}`
+    : `${fmt(fileCount)} files, no subfolders`;
+
+  const extSummary = extCountsSorted
+    .slice(0, 6)
+    .map(([ext, count]) => `${fmt(count)} ${ext.toUpperCase()}`)
+    .join(", ");
+  const fileTypes = `File types: ${extSummary}${extCountsSorted.length > 6 ? ", …" : ""}`;
+
+  return `${organization}\n\n${fileTypes}`;
+}
 
 function slugify(name) {
   return name
@@ -184,7 +239,7 @@ for (const line of lines) {
 const mergedTops = new Set(MERGE_GROUPS.flatMap((g) => g.members.map((m) => m.top)));
 
 const tops = [...folderPaths.keys()]
-  .filter((t) => !mergedTops.has(t))
+  .filter((t) => !mergedTops.has(t) && !EXCLUDE_TOPS.has(t))
   .sort((a, b) => folderPaths.get(b).length - folderPaths.get(a).length);
 
 const allPaths = [];
@@ -195,15 +250,17 @@ for (const top of tops) {
   allPaths.push(...paths);
 
   const extCounts = [...folderExt.get(top).entries()].sort((a, b) => b[1] - a[1]);
+  const relPaths = paths.map((p) => p.slice(top.length + 1));
 
   datasets.push({
     id: slugify(top),
     source_folder: top,
     label: NICE_NAMES[top] || top,
+    description: describeAccelFolder(relPaths, extCounts, paths.length),
     tag: TAGS[top] || null,
     file_count: paths.length,
     extensions: Object.fromEntries(extCounts),
-    zenodo: ZENODO[top] ? [ZENODO[top]] : null,
+    zenodo: null,
   });
 }
 
@@ -224,13 +281,17 @@ for (const group of MERGE_GROUPS) {
   paths.sort();
   allPaths.push(...paths);
 
+  const sortedExtCounts = [...extCounts.entries()].sort((a, b) => b[1] - a[1]);
+  const relPaths = paths.map((p) => p.slice(group.id.length + 1));
+
   datasets.push({
     id: group.id,
     source_folder: sourceNames.join(" + "),
     label: group.label,
+    description: describeAccelFolder(relPaths, sortedExtCounts, paths.length),
     tag: null,
     file_count: paths.length,
-    extensions: Object.fromEntries([...extCounts.entries()].sort((a, b) => b[1] - a[1])),
+    extensions: Object.fromEntries(sortedExtCounts),
     zenodo: null,
   });
 }

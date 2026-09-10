@@ -103,11 +103,16 @@
     });
   }
 
+  function buildPopoverText(dataset) {
+    return dataset.tag ? `${dataset.tag.title}\n\n${dataset.description}` : dataset.description;
+  }
+
   function openAgreement(dataset) {
     state.pendingRequest = dataset;
     els.agreementSubtitle.textContent = `${dataset.label} · ${dataset.source_folder}`;
     els.agreementDialog.showModal();
   }
+
 
   function assignPathsToDatasets(text) {
     const lines = text.split(/\r?\n/).filter(Boolean);
@@ -247,34 +252,27 @@
     label.className = "dataset-label";
     label.textContent = dataset.label;
     mainLine.append(label);
-    titleWrap.append(mainLine);
 
-    if (dataset.source_folder) {
-      const subLine = document.createElement("span");
-      subLine.className = "dataset-subline";
+    if (dataset.description) {
+      const popoverId = `desc-${dataset.id}`;
 
-      if (dataset.tag) {
-        const tagDesc = document.createElement("span");
-        tagDesc.className = "dataset-tag-desc";
-        tagDesc.textContent = dataset.tag.title;
-        subLine.append(tagDesc);
-      }
+      const hint = document.createElement("button");
+      hint.type = "button";
+      hint.className = "dataset-desc-hint";
+      hint.textContent = "?";
+      hint.setAttribute("popovertarget", popoverId);
+      hint.setAttribute("aria-label", "Show description");
+      mainLine.append(hint);
 
-      const rawName = document.createElement("span");
-      rawName.className = "dataset-raw-name";
-      rawName.textContent = dataset.source_folder;
-      subLine.append(rawName);
-      titleWrap.append(subLine);
-    } else if (dataset.description) {
-      const subLine = document.createElement("span");
-      subLine.className = "dataset-subline";
-      const desc = document.createElement("span");
-      desc.className = "dataset-desc-text";
-      desc.textContent = dataset.description;
-      desc.title = dataset.description;
-      subLine.append(desc);
-      titleWrap.append(subLine);
+      const popover = document.createElement("div");
+      popover.id = popoverId;
+      popover.setAttribute("popover", "auto");
+      popover.className = "desc-popover";
+      popover.textContent = buildPopoverText(dataset);
+      mainLine.append(popover);
     }
+
+    titleWrap.append(mainLine);
 
     const actionsWrap = document.createElement("span");
     actionsWrap.className = "dataset-badges";
