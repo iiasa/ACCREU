@@ -5,47 +5,41 @@
   "total_files": 22535,
   "datasets": [
     {
-      "id": "d2-4-crop-pollination-climate-only",
-      "source_folder": "D2_4_Crop_Pollination_Climate_Only",
-      "label": "Crop Pollination — Climate-Only Scenarios",
-      "description": "14,906 files in 2 subfolders: pollination_demand, pollination_potential\n\nFile types: 6,142 NC, 4,238 TIF, 2,826 XML, 1,690 JSON, 4 TXT, 2 R, …",
-      "tag": {
-        "type": "D",
-        "title": "Deliverable 2.4"
-      },
-      "file_count": 14906,
-      "extensions": {
-        "nc": 6142,
-        "tif": 4238,
-        "xml": 2826,
-        "json": 1690,
-        "txt": 4,
-        "r": 2,
-        "csv": 2,
-        "png": 1,
-        "xlsx": 1
-      },
-      "zenodo": null
-    },
+  "id": "crop-pollination-climate-only",
+  "source_folder": null,
+  "label": "Crop Pollination — Climate-Only Scenarios",
+  "description": "Crop pollination dataset for climate-only scenarios developed within ACCREU. Data are publicly available through Zenodo.",
+  "tag": {
+    "type": "D",
+    "title": "Deliverable 2.4"
+  },
+  "file_count": 0,
+  "extensions": {},
+  "zenodo": [
     {
-      "id": "d2-4-crop-pollination-full-workflow",
-      "source_folder": "D2_4_Crop_Pollination_Full_Workflow",
-      "label": "Crop Pollination — Full Workflow",
-      "description": "6,187 files in 3 subfolders: Crop_Pollination_Supply_Raw_SDMs, D2_4_Crop_Pollination_Flow, D2_4_Crop_Pollination_Supply\n\nFile types: 6,026 TIF, 153 GPKG, 4 CSV, 3 TXT, 1 R",
-      "tag": {
-        "type": "D",
-        "title": "Deliverable 2.4"
-      },
-      "file_count": 6187,
-      "extensions": {
-        "tif": 6026,
-        "gpkg": 153,
-        "csv": 4,
-        "txt": 3,
-        "r": 1
-      },
-      "zenodo": null
-    },
+      "doi": "10.5281/zenodo.22751032",
+      "title": "Crop Pollination — Climate-Only Scenarios"
+    }
+  ]
+},
+{
+  "id": "crop-pollination-full-workflow",
+  "source_folder": null,
+  "label": "D2.4 Crop Pollination — Full Workflow",
+  "description": "Dataset supporting ACCREU Deliverable 2.4, containing outputs from the full crop pollination workflow. The dataset is publicly available through Zenodo.",
+  "tag": {
+    "type": "D",
+    "title": "Deliverable 2.4"
+  },
+  "file_count": 0,
+  "extensions": {},
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.22743969",
+      "title": "Crop Pollination — Full Workflow"
+    }
+  ]
+},
     {
       "id": "flood",
       "source_folder": "Flood",
@@ -406,6 +400,38 @@
           "title": "DIVACoast model results: sea-level rise impacts and adaptation response under different adaptation paradigms"
         }
       ]
+    },
+    {
+  "id": "climate-econometrics-data-code",
+  "source_folder": null,
+  "label": "Climate Econometrics Data & Code",
+  "description": "Data and code supporting the study Rethinking Climate Econometrics: Data Cleaning, Flexible Trend Controls, and Predictive Validation.",
+  "tag": null,
+  "file_count": 1,
+  "extensions": {
+    "zip": 1
+  },
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.15470558",
+      "title": "Data and Code for: Rethinking Climate Econometrics: Data Cleaning, Flexible Trend Controls, and Predictive Validation"
     }
+  ]
+},
+{
+  "id": "global-limits-sustainable-irrigation",
+  "source_folder": null,
+  "label": "Global Limits of Sustainable Irrigation",
+  "description": "Data supporting the study The global limits of sustainable irrigation as an adaptation to climate change. The dataset contains spatially explicit and macroregional GLOBIOM results on agricultural production, irrigation, water use and trade under climate change scenarios. The Zenodo record is publicly available, while access to the deposited files is restricted.",
+  "tag": null,
+  "file_count": 0,
+  "extensions": {},
+  "zenodo": [
+    {
+      "doi": "110.5281/zenodo.19570552",
+      "title": "Data for: The global limits of sustainable irrigation as an adaptation to climate change"
+    }
+  ]
+}
   ]
 }
