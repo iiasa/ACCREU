@@ -43,8 +43,8 @@
     {
       "id": "flood",
       "source_folder": "Flood",
-      "label": "Flood Exposure & Impact Model Outputs",
-      "description": "535 files in 6 subfolders: R_scripts, csv, grass_data_analysis, loss_analysis, plots, rasters\n\nFile types: 321 CSV, 146 PDF, 64 TIF, 3 R, 1 MD",
+      "label": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data",
+      "description": "A comprehensive, reproducible suite of workflows for assessing flood exposure, land-use impacts, and crop-area, production, and revenue outcomes across multiple models, RCPs, and adaptation or mitigation strategies (snapshot years 2020 – 2050)",
       "tag": null,
       "file_count": 535,
       "extensions": {
@@ -54,7 +54,12 @@
         "r": 3,
         "md": 1
       },
-      "zenodo": null
+      "zenodo": [
+    {
+      "doi": "10.5281/zenodo.15878950",
+      "title": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data"
+    }
+  ]
     },
 
     {
@@ -176,14 +181,19 @@
       "id": "diva-slr-impact",
       "source_folder": "DIVA_SLR_Impact",
       "label": "DIVA — Sea-Level Rise Impact",
-      "description": "10 files in 2 subfolders: NLD_pl10_000_correction, flood_protection_standards_paradigm_runs\n\nFile types: 9 CSV, 1 MD",
+      "description": "This dataset contains modelled outputs of the DIVACoast model on flood risk driven by sea-level rise and adaptation response from the ACCREU EU project, structured across three spatial scales: NUTS2/GADM1 (subnational), country and global.",
       "tag": null,
       "file_count": 10,
       "extensions": {
         "csv": 9,
         "md": 1
       },
-      "zenodo": null
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.20545890",
+          "title": "DIVACoast model results: sea-level rise impacts and adaptation response under different adaptation paradigms"
+        }
+      ]
     },
     {
       "id": "kip-inca-ecosystem-services-evaluation",
@@ -334,23 +344,6 @@
       ]
     },
     {
-      "id": "flood-crop-workflow-code",
-      "source_folder": null,
-      "label": "Flood/Crop Workflow Code",
-      "description": "A comprehensive, reproducible suite of workflows for assessing flood exposure, land-use impacts, and crop-area, production, and revenue outcomes across multiple models, RCPs, and adaptation or mitigation strategies (snapshot years 2020-2050).",
-      "tag": null,
-      "file_count": 1,
-      "extensions": {
-        "zip": 1
-      },
-      "zenodo": [
-        {
-          "doi": "10.5281/zenodo.15923032",
-          "title": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data"
-        }
-      ]
-    },
-    {
       "id": "extreme-heat-health-economic-impacts",
       "source_folder": null,
       "label": "Extreme Heat Health & Economic Impacts",
@@ -367,24 +360,7 @@
         }
       ]
     },
-    {
-      "id": "divacoast-sea-level-rise-impacts",
-      "source_folder": null,
-      "label": "DIVACoast Sea-Level Rise Impacts",
-      "description": "This dataset contains modelled outputs of the DIVACoast model on flood risk driven by sea-level rise and adaptation response from the ACCREU EU project, structured across three spatial scales: NUTS2/GADM1 (subnational), country and global.",
-      "tag": null,
-      "file_count": 7,
-      "extensions": {
-        "csv": 6,
-        "md": 1
-      },
-      "zenodo": [
-        {
-          "doi": "10.5281/zenodo.20545890",
-          "title": "DIVACoast model results: sea-level rise impacts and adaptation response under different adaptation paradigms"
-        }
-      ]
-    },
+
     {
   "id": "climate-econometrics-data-code",
   "source_folder": null,
