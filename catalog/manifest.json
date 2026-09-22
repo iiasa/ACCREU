@@ -56,24 +56,7 @@
       },
       "zenodo": null
     },
-    {
-      "id": "isimip3b-monthly",
-      "source_folder": "ISIMIP3b_monthly",
-      "label": "ISIMIP3b Monthly Climate Forcing (Europe)",
-      "description": "262 files in 5 subfolders: historical, ssp126, ssp245, ssp370, ssp585\n\nFile types: 261 NC, 1 TXT",
-      "tag": null,
-      "file_count": 262,
-      "extensions": {
-        "nc": 261,
-        "txt": 1
-      },
-      "zenodo": [
-  {
-    "doi": "10.5281/zenodo.22707485",
-    "title": "Monthly ISIMIP3b climatic forcing aggregates (average) for the European continent"
-  }
-]
-    },
+
     {
       "id": "dtu-wildfire-simulations",
       "source_folder": "DTU_Wildfire_Simulations",
@@ -331,6 +314,24 @@
         }
       ]
     },
+        {
+      "id": "isimip3b-monthly",
+      "source_folder": "ISIMIP3b_monthly",
+      "label": "ISIMIP3b Monthly Climate Forcing (Europe)",
+      "description": "262 files in 5 subfolders: historical, ssp126, ssp245, ssp370, ssp585\n\nFile types: 261 NC, 1 TXT",
+      "tag": null,
+      "file_count": 262,
+      "extensions": {
+        "nc": 261,
+        "txt": 1
+      },
+      "zenodo": [
+  {
+    "doi": "10.5281/zenodo.22707485",
+    "title": "Monthly ISIMIP3b climatic forcing aggregates (average) for the European continent"
+  }
+]
+    },
     {
       "id": "wildfire-biodiversity-meta-analysis",
       "source_folder": null,
@@ -430,6 +431,24 @@
     {
       "doi": "110.5281/zenodo.19570552",
       "title": "Data for: The global limits of sustainable irrigation as an adaptation to climate change"
+    }
+  ]
+},
+    {
+  "id": "ssp-gridded-population",
+  "source_folder": null,
+  "label": "High-Resolution Gridded Population Projections SSPV3",
+  "description": "High-resolution gridded population dataset used to generate water-withdrawal inputs for the Community Water Model (CWatM). The dataset covers 1960–2100, including historical population and future projections aligned with SSP1–5.",
+  "tag": null,
+  "file_count": 13,
+  "extensions": {
+    "nc": 12,
+    "pdf": 1
+  },
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.14521892",
+      "title": "High resolution gridded population aligned with the Shared Socioeconomic Pathways (SSP) v3.0.1"
     }
   ]
 }
