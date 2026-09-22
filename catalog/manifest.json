@@ -267,7 +267,7 @@
     {
       "id": "water-demand-sspv3-0-1",
       "source_folder": null,
-      "label": "water_demand_SSPv3_0_1",
+      "label": "Water Withdrawal and Consumption SSPV3 (Europe)",
       "description": "The dataset provides annual water withdrawal and consumption estimates for Europe at a spatial resolution of 5 arcminutes, covering the periods 1960-2020 (historical) and 2020-2100 for four SSPs (1, 2, 3, and 5).",
       "tag": null,
       "file_count": 11,
@@ -322,7 +322,7 @@
     {
       "id": "decadal-bioclim-isimip3b",
       "source_folder": null,
-      "label": "Decadal BIOCLIM (ISIMIP3b)",
+      "label": "ISIMIP3b Decadal Climate Forcing (Europe)",
       "description": "This dataset contains BIOCLIM variables (plus huss, sfcwind, rsds) which have been prepared and calculated from the original ISIMIP3b bias-adjusted climate forcing data from 5 GCM models (obtained on 2023-08-07).",
       "tag": null,
       "file_count": 6,
