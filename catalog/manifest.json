@@ -160,23 +160,6 @@
       "zenodo": null
     },
     {
-      "id": "d2-3-health",
-      "source_folder": "D2_3_Health",
-      "label": "Health Impact Assessment",
-      "description": "20 files in 4 subfolders: Annual_mortality, Avoidable costs due to AC, Morbidity, Mortality_Costs_EUR\n\nFile types: 14 XLSX, 4 CSV, 2 DS_STORE",
-      "tag": {
-        "type": "D",
-        "title": "Deliverable 2.3"
-      },
-      "file_count": 20,
-      "extensions": {
-        "xlsx": 14,
-        "csv": 4,
-        "ds_store": 2
-      },
-      "zenodo": null
-    },
-    {
       "id": "inflation-adjusted",
       "source_folder": "Inflation_adjusted",
       "label": "Inflation-Adjusted Economic Data",
