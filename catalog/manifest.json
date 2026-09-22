@@ -73,7 +73,12 @@
         "nc": 261,
         "txt": 1
       },
-      "zenodo": null
+      "zenodo": [
+  {
+    "doi": "10.5281/zenodo.22707485",
+    "title": "Monthly ISIMIP3b climatic forcing aggregates (average) for the European continent"
+  }
+]
     },
     {
       "id": "dtu-wildfire-simulations",
