@@ -97,7 +97,12 @@
         "qix": 2,
         "md": 1
       },
-      "zenodo": null
+      "zenodo": [
+  {
+    "doi": "10.5281/zenodo.22809595",
+    "title": "Wildfire Burned Area Simulations for European Regions under Historical and Future Climate Conditions (ForeFire)"
+  }
+]
     },
     {
       "id": "wp3-cs3-2-lido-alberoni",
