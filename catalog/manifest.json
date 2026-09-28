@@ -388,7 +388,7 @@
   "extensions": {},
   "zenodo": [
     {
-      "doi": "110.5281/zenodo.19570552",
+      "doi": "https://doi.org/10.5281/zenodo.19570552",
       "title": "Data for: The global limits of sustainable irrigation as an adaptation to climate change"
     }
   ]
