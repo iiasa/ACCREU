@@ -431,9 +431,9 @@
   "label": "Geospatial Baseline Data for ACCREU Case Study Analysis – Venice Lagoon",
   "description": "Geospatial baseline data for sea level rise impact analysis of Lido di Venezia and Alberoni Oasis, including digital elevation models, spatial boundaries, metadata and processing workflows.",
   "tag": {
-    "type": "W",
-    "title": "Work Package 3 — Case Study 3.2"
-  },
+        "type": "CS",
+        "title": "Case Study 3.2"
+      },
   "file_count": 6,
   "extensions": {
     "zip": 6
@@ -451,9 +451,9 @@
   "label": "Sea Level Rise and Habitat Loss Projections for ACCREU Case Study Analysis – Venice Lagoon",
   "description": "Spatially explicit projections of sea level rise impacts and habitat loss for Lido di Venezia and Alberoni Oasis from 2015 to 2100 under alternative climate and coastal adaptation scenarios.",
   "tag": {
-    "type": "W",
-    "title": "Work Package 3 — Case Study 3.2"
-  },
+        "type": "CS",
+        "title": "Case Study 3.2"
+      },
   "file_count": 0,
   "extensions": {},
   "zenodo": [
