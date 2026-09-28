@@ -151,20 +151,6 @@
       "zenodo": null
     },
     {
-      "id": "globiom-iamc",
-      "source_folder": "GLOBIOM_IAMC",
-      "label": "GLOBIOM IAMC-Template Outputs",
-      "description": "23 files in 2 subfolders: Archive, NUTS2\n\nFile types: 16 CSV, 5 XLSX, 2 TXT",
-      "tag": null,
-      "file_count": 23,
-      "extensions": {
-        "csv": 16,
-        "xlsx": 5,
-        "txt": 2
-      },
-      "zenodo": null
-    },
-    {
       "id": "inflation-adjusted",
       "source_folder": "Inflation_adjusted",
       "label": "Inflation-Adjusted Economic Data",
@@ -195,21 +181,7 @@
         }
       ]
     },
-    {
-      "id": "kip-inca-ecosystem-services-evaluation",
-      "source_folder": "KIP_INCA_Ecosystem_Services_Evaluation",
-      "label": "KIP-INCA Ecosystem Services Evaluation",
-      "description": "6 files in 1 subfolder: KIP_INCA_2021_Updates\n\nFile types: 3 PDF, 2 TXT, 1 ZIP",
-      "tag": null,
-      "file_count": 6,
-      "extensions": {
-        "pdf": 3,
-        "txt": 2,
-        "zip": 1
-      },
-      "zenodo": null
-    },
-    {
+     {
       "id": "cmcc-lab-prod",
       "source_folder": "CMCC_lab_prod",
       "label": "CMCC Labour Productivity Shocks",
@@ -410,6 +382,46 @@
       "title": "High resolution gridded population aligned with the Shared Socioeconomic Pathways (SSP) v3.0.1"
     }
   ]
-}
+}, 
+{
+  "source_folder": null,
+  "label": "GLOBIOM climate impact and adaptation scenarios – European NUTS2",
+  "description": "European NUTS2-level GLOBIOM results for land use, agricultural production, crop yields, irrigation water withdrawals, bioenergy and roundwood production under ACCREU climate-impact and adaptation scenarios.",
+  "file_count": 4,
+  "extensions": {
+    "zip": 1,
+    "png": 1,
+    "md": 1,
+    "pdf": 1
+  },
+  "zenodo": {
+    "doi": "10.5281/zenodo.22900647",
+    "title": "GLOBIOM Climate Impact and Adaptation Scenario Results at European NUTS2 Level"
+  }
+},
+{
+  "source_folder": null,
+  "label": "Geospatial baseline data for ACCREU Case Study Analysis– Venice Lagoon",
+  "description": "Geospatial baseline data for sea level rise impact analysis of Lido di Venezia and Alberoni Oasis, including digital elevation models, spatial boundaries, metadata and processing workflows.",
+  "file_count": 6,
+  "extensions": {
+    "zip": 6
+  },
+  "zenodo": {
+    "doi": "10.5281/zenodo.22974322",
+    "title": "Geospatial baseline data for sea level rise analysis: Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
+  }
+},
+{
+  "source_folder": null,
+  "label": "Sea level rise and habitat loss projections for ACCREU Case Study Analysis – Venice Lagoon",
+  "description": "Spatially explicit projections of sea level rise impacts and habitat loss for Lido di Venezia and Alberoni Oasis from 2015 to 2100 under alternative climate and coastal adaptation scenarios.",
+  "file_count": 0,
+  "extensions": {},
+  "zenodo": {
+    "doi": "10.5281/zenodo.22998429",
+    "title": "Sea level rise and habitat loss projections (2015-2100): Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
+  }
+}   
   ]
 }
