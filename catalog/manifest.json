@@ -384,9 +384,11 @@
   ]
 }, 
 {
+  "id": "globiom-accreu-nuts2",
   "source_folder": null,
-  "label": "GLOBIOM climate impact and adaptation scenarios – European NUTS2",
+  "label": "GLOBIOM Climate Impact and Adaptation Scenarios – European NUTS2",
   "description": "European NUTS2-level GLOBIOM results for land use, agricultural production, crop yields, irrigation water withdrawals, bioenergy and roundwood production under ACCREU climate-impact and adaptation scenarios.",
+  "tag": null,
   "file_count": 4,
   "extensions": {
     "zip": 1,
@@ -394,34 +396,50 @@
     "md": 1,
     "pdf": 1
   },
-  "zenodo": {
-    "doi": "10.5281/zenodo.22900647",
-    "title": "GLOBIOM Climate Impact and Adaptation Scenario Results at European NUTS2 Level"
-  }
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.22900647",
+      "title": "GLOBIOM Climate Impact and Adaptation Scenario Results at European NUTS2 Level"
+    }
+  ]
 },
 {
+  "id": "lido-alberoni-geospatial-baseline",
   "source_folder": null,
-  "label": "Geospatial baseline data for ACCREU Case Study Analysis– Venice Lagoon",
+  "label": "Geospatial Baseline Data for ACCREU Case Study Analysis – Venice Lagoon",
   "description": "Geospatial baseline data for sea level rise impact analysis of Lido di Venezia and Alberoni Oasis, including digital elevation models, spatial boundaries, metadata and processing workflows.",
+  "tag": {
+    "type": "W",
+    "title": "Work Package 3 — Case Study 3.2"
+  },
   "file_count": 6,
   "extensions": {
     "zip": 6
   },
-  "zenodo": {
-    "doi": "10.5281/zenodo.22974322",
-    "title": "Geospatial baseline data for sea level rise analysis: Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
-  }
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.22974322",
+      "title": "Geospatial baseline data for sea level rise analysis: Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
+    }
+  ]
 },
 {
+  "id": "lido-alberoni-slr-habitat-loss",
   "source_folder": null,
-  "label": "Sea level rise and habitat loss projections for ACCREU Case Study Analysis – Venice Lagoon",
+  "label": "Sea Level Rise and Habitat Loss Projections for ACCREU Case Study Analysis – Venice Lagoon",
   "description": "Spatially explicit projections of sea level rise impacts and habitat loss for Lido di Venezia and Alberoni Oasis from 2015 to 2100 under alternative climate and coastal adaptation scenarios.",
+  "tag": {
+    "type": "W",
+    "title": "Work Package 3 — Case Study 3.2"
+  },
   "file_count": 0,
   "extensions": {},
-  "zenodo": {
-    "doi": "10.5281/zenodo.22998429",
-    "title": "Sea level rise and habitat loss projections (2015-2100): Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
-  }
-}   
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.22998429",
+      "title": "Sea level rise and habitat loss projections (2015-2100): Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
+    }
+  ]
+}  
   ]
 }
