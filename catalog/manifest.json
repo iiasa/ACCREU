@@ -45,7 +45,10 @@
       "source_folder": "Flood",
       "label": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data",
       "description": "A comprehensive, reproducible suite of workflows for assessing flood exposure, land-use impacts, and crop-area, production, and revenue outcomes across multiple models, RCPs, and adaptation or mitigation strategies (snapshot years 2020 – 2050)",
-      "tag": null,
+      "tag": {
+  "type": "D",
+  "title": "Deliverable 2.4"
+}
       "file_count": 535,
       "extensions": {
         "csv": 321,
@@ -67,7 +70,10 @@
       "source_folder": "DTU_Wildfire_Simulations",
       "label": "DTU Wildfire Risk Simulations",
       "description": "246 files in 3 subfolders: Central, North, South\n\nFile types: 42 CPG, 42 PRJ, 42 DBF, 42 SHX, 42 SHP, 33 QMD, …",
-      "tag": null,
+     "tag": {
+  "type": "D",
+  "title": "Deliverable 2.4"
+}
       "file_count": 246,
       "extensions": {
         "cpg": 42,
@@ -91,7 +97,10 @@
       "source_folder": "CMCC_energy",
       "label": "CMCC Energy Demand Shocks",
       "description": "34 files in 2 subfolders: ac_investments, hourly_model\n\nFile types: 33 CSV, 1 DOCX",
-      "tag": null,
+    "tag": {
+  "type": "D",
+  "title": "Deliverable 2.2"
+}
       "file_count": 34,
       "extensions": {
         "csv": 33,
@@ -104,7 +113,10 @@
       "source_folder": "GLOFRIS_flood",
       "label": "GLOFRIS Flood Risk Model Outputs",
       "description": "27 files, no subfolders\n\nFile types: 26 XLSX, 1 DOCX",
-      "tag": null,
+      "tag": {
+  "type": "D",
+  "title": "Deliverable 2.1"
+}
       "file_count": 27,
       "extensions": {
         "xlsx": 26,
@@ -117,7 +129,10 @@
       "source_folder": "DIVA_SLR_Impact",
       "label": "DIVA — Sea-Level Rise Impact",
       "description": "This dataset contains modelled outputs of the DIVACoast model on flood risk driven by sea-level rise and adaptation response from the ACCREU EU project, structured across three spatial scales: NUTS2/GADM1 (subnational), country and global.",
-      "tag": null,
+      "tag": {
+  "type": "D",
+  "title": "Deliverable 2.1"
+}
       "file_count": 10,
       "extensions": {
         "csv": 9,
@@ -135,7 +150,10 @@
       "source_folder": "CMCC_lab_prod",
       "label": "CMCC Labour Productivity Shocks",
       "description": "3 files, no subfolders\n\nFile types: 3 CSV",
-      "tag": null,
+      "tag": {
+  "type": "D",
+  "title": "Deliverable 2.2"
+}
       "file_count": 3,
       "extensions": {
         "csv": 3
@@ -147,7 +165,10 @@
       "source_folder": "cwatm_rcp4p5_daily (daily) + CWatM_RCP4p5 (monthly)",
       "label": "CWatM Discharge & Runoff — RCP4.5",
       "description": "57 files in 2 subfolders: daily, monthly\n\nFile types: 56 NC, 1 TXT",
-      "tag": null,
+      "tag": {
+  "type": "D",
+  "title": "Deliverable 2.2"
+}
       "file_count": 57,
       "extensions": {
         "nc": 56,
@@ -181,7 +202,10 @@
       "source_folder": null,
       "label": "Energy Systems Model (AETOS)",
       "description": "This repository contains datasets and model inputs developed within the ACCREU project to assess climate change impacts on European energy systems. The data support technoeconomic modelling of electricity demand and supply under multiple climate scenarios (RCP2.6, RCP4.5, and RCP7.0), including impacts on renewable generation, hydropower availability, thermal plant performance, and temperature-driven demand changes.",
-      "tag": null,
+    "tag": {
+  "type": "D",
+  "title": "Deliverable 2.6"
+}
       "file_count": 23,
       "extensions": {
         "txt": 12,
@@ -199,7 +223,10 @@
       "source_folder": null,
       "label": "Residential Cooling Energy Demand",
       "description": "This repository hosts output data for SSPs126, 245, 370 and 585 on the estimated and future projected ownership of residential air conditioning (% of households), the related energy consumption (TWh/yr.), and the underlying population counts (useful to quantify the per-capita average consumption or the headcount of people affected by the cooling gap).",
-      "tag": null,
+      "tag": {
+  "type": "D",
+  "title": "Deliverable 2.2"
+}
       "file_count": 5,
       "extensions": {
         "nc": 3,
@@ -254,7 +281,10 @@
       "source_folder": null,
       "label": "Wildfire & Biodiversity Meta-Analysis",
       "description": "Here is the dataset of a meta-analysis examining the effects of fires on taxa abundances within various European forest fauna and flora. The analysis focuses on how different taxa respond to fire, providing quantitative estimates of these responses using effect sizes. The dataset provides 2192 unique effect sizes from 819 unique taxa reported in 29 studies investigating wild or prescribed fires.",
-      "tag": null,
+     "tag": {
+  "type": "D",
+  "title": "Deliverable 2.4"
+}
       "file_count": 2,
       "extensions": {
         "csv": 1,
