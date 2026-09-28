@@ -86,33 +86,7 @@
   }
 ]
     },
-    {
-      "id": "wp3-cs3-2-lido-alberoni",
-      "source_folder": "WP3_CS3_2_Lido_Alberoni",
-      "label": "Case Study — Lido di Alberoni",
-      "description": "118 files in 5 subfolders: alberoni_habitats, alberoni_natura2000_shapefile, digital_elevation_model, lido_DIVA_outputs, lido_sea_level_rise_calculated\n\nFile types: 32 TIF, 32 XML, 30 GPKG, 3 CPG, 3 DBF, 3 PRJ, …",
-      "tag": {
-        "type": "W",
-        "title": "Work Package 3 — Case Study 3.2"
-      },
-      "file_count": 118,
-      "extensions": {
-        "tif": 32,
-        "xml": 32,
-        "gpkg": 30,
-        "cpg": 3,
-        "dbf": 3,
-        "prj": 3,
-        "qmd": 3,
-        "shp": 3,
-        "shx": 3,
-        "txt": 3,
-        "csv": 2,
-        "pdf": 1
-      },
-      "zenodo": null
-    },
-    {
+      {
       "id": "cmcc-energy",
       "source_folder": "CMCC_energy",
       "label": "CMCC Energy Demand Shocks",
@@ -135,31 +109,6 @@
       "extensions": {
         "xlsx": 26,
         "docx": 1
-      },
-      "zenodo": null
-    },
-    {
-      "id": "glofris-nuts3-for-lorenza",
-      "source_folder": "GLOFRIS_NUTS3(for_Lorenza)",
-      "label": "GLOFRIS Flood Risk — NUTS3 Aggregates",
-      "description": "24 files, no subfolders\n\nFile types: 24 XLSX",
-      "tag": null,
-      "file_count": 24,
-      "extensions": {
-        "xlsx": 24
-      },
-      "zenodo": null
-    },
-    {
-      "id": "inflation-adjusted",
-      "source_folder": "Inflation_adjusted",
-      "label": "Inflation-Adjusted Economic Data",
-      "description": "16 files in 4 subfolders: Outputs (Agri), Outputs (DIVA), Outputs (Energy), Outputs (GLOFRIS)\n\nFile types: 8 DOCX, 8 XLSX",
-      "tag": null,
-      "file_count": 16,
-      "extensions": {
-        "docx": 8,
-        "xlsx": 8
       },
       "zenodo": null
     },
@@ -211,7 +160,10 @@
       "source_folder": null,
       "label": "Water Withdrawal and Consumption SSPV3 (Europe)",
       "description": "The dataset provides annual water withdrawal and consumption estimates for Europe at a spatial resolution of 5 arcminutes, covering the periods 1960-2020 (historical) and 2020-2100 for four SSPs (1, 2, 3, and 5).",
-      "tag": null,
+      "tag": {
+    "type": "D",
+    "title": "Deliverable 2.2"
+     },
       "file_count": 11,
       "extensions": {
         "nc": 10,
@@ -320,7 +272,10 @@
       "source_folder": null,
       "label": "Extreme Heat Health & Economic Impacts",
       "description": "This dataset contains information collected during the ACCREU (Assessment of Climate Change in Europe) study, carried out at BC3 (Basque Centre for Climate Change) in 2025. The dataset includes six files in Excel format that record estimates of mortality, morbidity and their costs attributable to extreme heat in Europe, at NUTS3 level for people over 65 years of age. These estimates have been made for a historical period and for projections in 2030, 2050 and 2070 under four different climate scenarios (combinations of SSP and RCP).",
-      "tag": null,
+      "tag": {
+    "type": "D",
+    "title": "Deliverable 2.3"
+  },
       "file_count": 6,
       "extensions": {
         "xlsx": 6
