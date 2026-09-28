@@ -387,8 +387,11 @@
   "id": "globiom-accreu-nuts2",
   "source_folder": null,
   "label": "GLOBIOM Climate Impact and Adaptation Scenarios – European NUTS2",
-  "description": "European NUTS2-level GLOBIOM results for land use, agricultural production, crop yields, irrigation water withdrawals, bioenergy and roundwood production under ACCREU climate-impact and adaptation scenarios.",
-  "tag": null,
+  "description": "Dataset supporting ACCREU Deliverable 2.2, European NUTS2-level GLOBIOM results for land use, agricultural production, crop yields, irrigation water withdrawals, bioenergy and roundwood production under ACCREU climate-impact and adaptation scenarios.",
+  "tag": {
+    "type": "D",
+    "title": "Deliverable 2.2"
+  },
   "file_count": 4,
   "extensions": {
     "zip": 1,
@@ -403,6 +406,25 @@
     }
   ]
 },
+{
+  "id": "globiom-accreu-country-regional",
+  "source_folder": null,
+  "label": "GLOBIOM Climate Impact and Adaptation Scenarios – Country and Regional Level",
+  "description": "Dataset supporting ACCREU Deliverable 2.2, containing GLOBIOM results at country and regional level under ACCREU climate impact and adaptation scenarios. The dataset is publicly available through Zenodo.",
+  "tag": {
+    "type": "D",
+    "title": "Deliverable 2.2"
+  },
+  "file_count": 0,
+  "extensions": {},
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.22918533",
+      "title": "GLOBIOM Climate Impact and Adaptation Scenario Results at Country and Regional Level"
+    }
+  ]
+},
+    
 {
   "id": "lido-alberoni-geospatial-baseline",
   "source_folder": null,
