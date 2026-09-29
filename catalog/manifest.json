@@ -409,7 +409,24 @@
     }
   ]
 },
-    
+{
+  "id": "slr-spatial-modeling-workflow-dataset",
+  "source_folder": null,
+  "label": "Sea level rise inundation spatial modelling workflow and dataset for Europe",
+  "description": "Dataset supporting ACCREU Deliverable 2.4, Sea-level rise inundation maps for European coastal countries, derived by combining DIVACoast relative sea-level-rise projections with MERITDEM elevation data.",
+  "tag": {
+    "type": "D",
+    "title": "Deliverable 2.4"
+  },
+  "file_count": 0,
+  "extensions": {},
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.22884282",
+      "title": "Sea level rise inundation spatial modelling workflow and dataset for Europe"
+    }
+  ]
+},   
 {
   "id": "lido-alberoni-geospatial-baseline",
   "source_folder": null,
