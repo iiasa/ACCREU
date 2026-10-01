@@ -145,6 +145,25 @@
         }
       ]
     },
+{
+  "id": "fluvial-flood-gdp-damages",
+  "source_folder": null,
+  "label": "Fluvial Flood-Induced Damages to GDP per Capita",
+  "description": "Dataset supporting ACCREU Deliverable 2.5, containing projections of fluvial flood-induced damages to GDP per capita at NUTS1 level developed within the ACCREU project. The dataset is publicly available through Zenodo.",
+  "tag": {
+    "type": "D",
+    "title": "Deliverable 2.5"
+  },
+  "file_count": 0,
+  "extensions": {},
+  "zenodo": [
+    {
+      "doi": "10.5281/zenodo.17360324",
+      "title": "Projection of fluvial flood-induced damages on NUTS1-level GDP per capita for the ACCREU project"
+    }
+  ]
+}
+    
      {
       "id": "cmcc-lab-prod",
       "source_folder": "CMCC_lab_prod",
