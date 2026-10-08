@@ -116,8 +116,3 @@ If `git push` is rejected because GitHub has newer commits, run `git pull`, then
    a secret and asks a free hosted model (NVIDIA Nemotron 3 Ultra first) to answer
    from the sources only, citing them as [1], [2]. The answer is streamed, and each
    citation links to its source (reports open at the cited page).
-
-The key is never in the page or in this repository. To deploy the Worker, follow
-`worker/README.md`, then put its address in `assets/agent-config.js`. Without it,
-or when the free models are busy, the assistant answers by quoting the matching
-sources.
