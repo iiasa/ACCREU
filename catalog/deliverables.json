@@ -1,0 +1,22 @@
+{
+  "source": "https://www.accreu.eu/deliverables/",
+  "note": "Public ACCREU deliverables. A dataset links to a deliverable through its manifest `tag` (e.g. \"Deliverable 2.4\" -> D2.4, \"Case Study 3.2\" -> D3.2) or an explicit `deliverables` list such as [\"D2.4\", \"D2.5\"].",
+  "deliverables": {
+    "D1.1": { "title": "Project research framing and stocktaking report", "url": "https://www.accreu.eu/wp-content/uploads/2026/03/ACCREU_D1.1-final.pdf" },
+    "D1.4": { "title": "Report of strategic co-creation actions", "url": "https://www.accreu.eu/wp-content/uploads/2026/05/ACCREU_D1.4.pdf" },
+    "D1.5": { "title": "Research priorities and review paper on emergent co-design (of the economics of transformational adaptation)", "url": "https://www.accreu.eu/wp-content/uploads/2026/09/ACCREU_D1.5.pdf" },
+    "D1.6": { "title": "Co-creation evaluation report", "url": "https://www.accreu.eu/wp-content/uploads/2026/10/ACCREU_D1_6_FINAL.pdf" },
+    "D2.1": { "title": "Impacts on infrastructure and built environment", "url": "https://www.accreu.eu/wp-content/uploads/2025/01/D2.1_Impacts-on-infrastructure-and-built-environment.pdf" },
+    "D2.2": { "title": "Impacts on food, energy, and water", "url": "https://www.accreu.eu/wp-content/uploads/2025/01/D2.2WaterEnergyLand.pdf" },
+    "D2.3": { "title": "Impacts on health & wellbeing", "url": "https://www.accreu.eu/wp-content/uploads/2025/01/D2.3_Impacts-on-health-and-wellbeing.docx.pdf" },
+    "D2.4": { "title": "Impacts on Ecosystems and Biodiversity", "url": "https://www.accreu.eu/wp-content/uploads/2026/04/ACCREU_D2.4-with-annexes_revised-April-2026.pdf" },
+    "D2.5": { "title": "Impacts of Extremes, Catastrophic Events, and Supply Chains", "url": "https://www.accreu.eu/wp-content/uploads/2025/12/D2.5-with-annexes_ACCREU.pdf" },
+    "D2.6": { "title": "Climate change impacts in EU's energy systems", "url": "https://www.accreu.eu/wp-content/uploads/2026/03/D2.6-report_20260319.pdf" },
+    "D2.7": { "title": "Health risks for Europe and the world of different climate scenarios and the attribution of these risks to sectors", "url": "https://www.accreu.eu/wp-content/uploads/2026/04/ACCREU-deliverable-D2.7.pdf" },
+    "D3.2": { "title": "Adaptation case study analysis", "url": "https://www.accreu.eu/wp-content/uploads/2026/01/ACCREU_D3.2_final_28.01.2026.pdf" },
+    "D3.4": { "title": "Economics of adaptation inventory", "url": "https://www.accreu.eu/wp-content/uploads/2025/12/ACCREU_D3_4_final.pdf" },
+    "D4.1": { "title": "Advancing impacts and adaptation in IAM and CGE models", "url": "https://www.accreu.eu/wp-content/uploads/2026/05/D4.1-updated_08.05.2026.pdf" },
+    "D4.3": { "title": "Fiscal and Financial Analysis", "url": "https://www.accreu.eu/wp-content/uploads/2026/09/ACCREU-Deliverable-D4.3FINAL.pdf" },
+    "D5.7": { "title": "Upgraded Climate Change Impacts and Policy Open Data Catalog", "url": "https://www.accreu.eu/wp-content/uploads/2026/10/D5.7_OpenDatabase.pdf" }
+  }
+}

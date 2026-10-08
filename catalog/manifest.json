@@ -2,111 +2,142 @@
   "generated_at": "2026-09-10T12:46:12.784Z",
   "source_note": "Generated from an internal export of the IIASA Accelerator (S3) storage for the ACCREU project. The export contained temporary, pre-signed download URLs (valid ~30 minutes); those signatures are intentionally not published here. This catalog lists file names and folder structure only.",
   "catalog_file": "catalog/paths.txt",
-  "total_files": 22535,
+  "total_files": 3743,
   "datasets": [
     {
-  "id": "crop-pollination-climate-only",
-  "source_folder": null,
-  "label": "Crop Pollination — Climate-Only Scenarios",
-  "description": "Crop pollination dataset for climate-only scenarios developed within ACCREU. Data are publicly available through Zenodo.",
-  "tag": {
-    "type": "D",
-    "title": "Deliverable 2.4"
-  },
-  "file_count": 0,
-  "extensions": {},
-  "zenodo": [
+      "id": "crop-pollination-climate-only",
+      "source_folder": null,
+      "label": "Crop Pollination — Climate-Only Scenarios",
+      "description": "Crop pollination dataset for climate-only scenarios developed within ACCREU. Data are publicly available through Zenodo.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
+      "file_count": 1046,
+      "extensions": {
+        "tif": 1039,
+        "txt": 2,
+        "csv": 2,
+        "r": 2,
+        "png": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.22751032",
+          "title": "European pollinator species distribution models and pollination supply metrics under climate change"
+        }
+      ],
+      "files_truncated": true,
+      "deliverables": [
+        "D2.4"
+      ]
+    },
     {
-      "doi": "10.5281/zenodo.22751032",
-      "title": "Crop Pollination — Climate-Only Scenarios"
-    }
-  ]
-},
-{
-  "id": "crop-pollination-full-workflow",
-  "source_folder": null,
-  "label": "D2.4 Crop Pollination — Full Workflow",
-  "description": "Dataset supporting ACCREU Deliverable 2.4, containing outputs from the full crop pollination workflow. The dataset is publicly available through Zenodo.",
-  "tag": {
-    "type": "D",
-    "title": "Deliverable 2.4"
-  },
-  "file_count": 0,
-  "extensions": {},
-  "zenodo": [
-    {
-      "doi": "10.5281/zenodo.22743969",
-      "title": "Crop Pollination — Full Workflow"
-    }
-  ]
-},
+      "id": "crop-pollination-full-workflow",
+      "source_folder": null,
+      "label": "D2.4 Crop Pollination — Full Workflow",
+      "description": "Dataset supporting ACCREU Deliverable 2.4, containing outputs from the full crop pollination workflow. The dataset is publicly available through Zenodo.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
+      "file_count": 17,
+      "extensions": {
+        "csv": 9,
+        "r": 2,
+        "txt": 2,
+        "zip": 2,
+        "md": 1,
+        "xlsx": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.22743969",
+          "title": "European crop pollination supply, demand, and flow under climate and land-use change workflow and dataset"
+        }
+      ],
+      "deliverables": [
+        "D2.4"
+      ]
+    },
     {
       "id": "flood",
       "source_folder": "Flood",
       "label": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data",
       "description": "A comprehensive, reproducible suite of workflows for assessing flood exposure, land-use impacts, and crop-area, production, and revenue outcomes across multiple models, RCPs, and adaptation or mitigation strategies (snapshot years 2020 – 2050)",
       "tag": {
-  "type": "D",
-  "title": "Deliverable 2.4"
-},
-      "file_count": 535,
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
+      "file_count": 861,
       "extensions": {
-        "csv": 321,
-        "pdf": 146,
+        "csv": 513,
+        "pdf": 274,
         "tif": 64,
-        "r": 3,
-        "md": 1
+        "r": 5,
+        "md": 3,
+        "gitattributes": 1,
+        "(none)": 1
       },
       "zenodo": [
-    {
-      "doi": "10.5281/zenodo.15878950",
-      "title": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data"
-    }
-  ]
+        {
+          "doi": "10.5281/zenodo.15878950",
+          "title": "Integrated Flood Exposure, Land-Use Impact, Crop & Grassland data"
+        }
+      ],
+      "deliverables": [
+        "D2.4"
+      ]
     },
-
     {
       "id": "dtu-wildfire-simulations",
       "source_folder": "DTU_Wildfire_Simulations",
       "label": "DTU Wildfire Risk Simulations",
       "description": "246 files in 3 subfolders: Central, North, South\n\nFile types: 42 CPG, 42 PRJ, 42 DBF, 42 SHX, 42 SHP, 33 QMD, …",
-     "tag": {
-  "type": "D",
-  "title": "Deliverable 2.4"
-},
-      "file_count": 246,
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
+      "file_count": 247,
       "extensions": {
         "cpg": 42,
-        "prj": 42,
         "dbf": 42,
-        "shx": 42,
+        "prj": 42,
         "shp": 42,
+        "shx": 42,
         "qmd": 33,
         "qix": 2,
-        "md": 1
+        "md": 2
       },
       "zenodo": [
-  {
-    "doi": "10.5281/zenodo.22809595",
-    "title": "Wildfire Burned Area Simulations for European Regions under Historical and Future Climate Conditions (ForeFire)"
-  }
-]
+        {
+          "doi": "10.5281/zenodo.22809595",
+          "title": "Wildfire Burned Area Simulations for European Regions under Historical and Future Climate Conditions (ForeFire)"
+        }
+      ],
+      "deliverables": [
+        "D2.4"
+      ]
     },
-      {
+    {
       "id": "cmcc-energy",
       "source_folder": "CMCC_energy",
       "label": "CMCC Energy Demand Shocks",
       "description": "34 files in 2 subfolders: ac_investments, hourly_model\n\nFile types: 33 CSV, 1 DOCX",
-    "tag": {
-  "type": "D",
-  "title": "Deliverable 2.2"
-},
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
       "file_count": 34,
       "extensions": {
         "csv": 33,
         "docx": 1
       },
-      "zenodo": null
+      "zenodo": null,
+      "deliverables": [
+        "D2.2",
+        "D4.1"
+      ]
     },
     {
       "id": "glofris-flood",
@@ -114,15 +145,18 @@
       "label": "GLOFRIS Flood Risk Model Outputs",
       "description": "27 files, no subfolders\n\nFile types: 26 XLSX, 1 DOCX",
       "tag": {
-  "type": "D",
-  "title": "Deliverable 2.1"
-},
+        "type": "D",
+        "title": "Deliverable 2.1"
+      },
       "file_count": 27,
       "extensions": {
         "xlsx": 26,
         "docx": 1
       },
-      "zenodo": null
+      "zenodo": null,
+      "deliverables": [
+        "D2.1"
+      ]
     },
     {
       "id": "diva-slr-impact",
@@ -130,12 +164,12 @@
       "label": "DIVA — Sea-Level Rise Impact",
       "description": "This dataset contains modelled outputs of the DIVACoast model on flood risk driven by sea-level rise and adaptation response from the ACCREU EU project, structured across three spatial scales: NUTS2/GADM1 (subnational), country and global.",
       "tag": {
-  "type": "D",
-  "title": "Deliverable 2.1"
-},
-      "file_count": 10,
+        "type": "D",
+        "title": "Deliverable 2.1"
+      },
+      "file_count": 7,
       "extensions": {
-        "csv": 9,
+        "csv": 6,
         "md": 1
       },
       "zenodo": [
@@ -143,41 +177,55 @@
           "doi": "10.5281/zenodo.20545890",
           "title": "DIVACoast model results: sea-level rise impacts and adaptation response under different adaptation paradigms"
         }
+      ],
+      "deliverables": [
+        "D2.1",
+        "D2.4"
       ]
     },
-{
-  "id": "fluvial-flood-gdp-damages",
-  "source_folder": null,
-  "label": "Fluvial Flood-Induced Damages to GDP per Capita",
-  "description": "Dataset supporting ACCREU Deliverable 2.5, containing projections of fluvial flood-induced damages to GDP per capita at NUTS1 level developed within the ACCREU project. The dataset is publicly available through Zenodo.",
-  "tag": {
-    "type": "D",
-    "title": "Deliverable 2.5"
-  },
-  "file_count": 0,
-  "extensions": {},
-  "zenodo": [
     {
-      "doi": "10.5281/zenodo.17360324",
-      "title": "Projection of fluvial flood-induced damages on NUTS1-level GDP per capita for the ACCREU project"
-    }
-  ]
-},
-    
-     {
+      "id": "fluvial-flood-gdp-damages",
+      "source_folder": null,
+      "label": "Fluvial Flood-Induced Damages to GDP per Capita",
+      "description": "Dataset supporting ACCREU Deliverable 2.5, containing projections of fluvial flood-induced damages to GDP per capita at NUTS1 level developed within the ACCREU project. The dataset is publicly available through Zenodo.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.5"
+      },
+      "file_count": 15,
+      "extensions": {
+        "csv": 10,
+        "py": 4,
+        "json": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.17360324",
+          "title": "Projection of fluvial flood-induced damages on NUTS1-level GDP per capita for the ACCREU project"
+        }
+      ],
+      "deliverables": [
+        "D2.5"
+      ]
+    },
+    {
       "id": "cmcc-lab-prod",
       "source_folder": "CMCC_lab_prod",
       "label": "CMCC Labour Productivity Shocks",
       "description": "3 files, no subfolders\n\nFile types: 3 CSV",
       "tag": {
-  "type": "D",
-  "title": "Deliverable 2.2"
-},
+        "type": "D",
+        "title": "Deliverable 2.3"
+      },
       "file_count": 3,
       "extensions": {
         "csv": 3
       },
-      "zenodo": null
+      "zenodo": null,
+      "deliverables": [
+        "D2.3",
+        "D4.1"
+      ]
     },
     {
       "id": "cwatm-rcp4p5",
@@ -185,15 +233,18 @@
       "label": "CWatM Discharge & Runoff — RCP4.5",
       "description": "57 files in 2 subfolders: daily, monthly\n\nFile types: 56 NC, 1 TXT",
       "tag": {
-  "type": "D",
-  "title": "Deliverable 2.2"
-},
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
       "file_count": 57,
       "extensions": {
         "nc": 56,
         "txt": 1
       },
-      "zenodo": null
+      "zenodo": null,
+      "deliverables": [
+        "D2.2"
+      ]
     },
     {
       "id": "water-demand-sspv3-0-1",
@@ -201,9 +252,9 @@
       "label": "Water Withdrawal and Consumption SSPV3 (Europe)",
       "description": "The dataset provides annual water withdrawal and consumption estimates for Europe at a spatial resolution of 5 arcminutes, covering the periods 1960-2020 (historical) and 2020-2100 for four SSPs (1, 2, 3, and 5).",
       "tag": {
-    "type": "D",
-    "title": "Deliverable 2.2"
-     },
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
       "file_count": 11,
       "extensions": {
         "nc": 10,
@@ -214,6 +265,9 @@
           "doi": "10.5281/zenodo.13767595",
           "title": "SSP-aligned projected European water withdrawal/consumption at 5 arcminutes"
         }
+      ],
+      "deliverables": [
+        "D2.2"
       ]
     },
     {
@@ -221,10 +275,10 @@
       "source_folder": null,
       "label": "Energy Systems Model (AETOS)",
       "description": "This repository contains datasets and model inputs developed within the ACCREU project to assess climate change impacts on European energy systems. The data support technoeconomic modelling of electricity demand and supply under multiple climate scenarios (RCP2.6, RCP4.5, and RCP7.0), including impacts on renewable generation, hydropower availability, thermal plant performance, and temperature-driven demand changes.",
-    "tag": {
-  "type": "D",
-  "title": "Deliverable 2.6"
-},
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.6"
+      },
       "file_count": 23,
       "extensions": {
         "txt": 12,
@@ -235,6 +289,9 @@
           "doi": "10.5281/zenodo.18771647",
           "title": "Climate change impacts in EU's energy systems - Energy Systems Model"
         }
+      ],
+      "deliverables": [
+        "D2.6"
       ]
     },
     {
@@ -243,20 +300,26 @@
       "label": "Residential Cooling Energy Demand",
       "description": "This repository hosts output data for SSPs126, 245, 370 and 585 on the estimated and future projected ownership of residential air conditioning (% of households), the related energy consumption (TWh/yr.), and the underlying population counts (useful to quantify the per-capita average consumption or the headcount of people affected by the cooling gap).",
       "tag": {
-  "type": "D",
-  "title": "Deliverable 2.2"
-},
-      "file_count": 5,
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
+      "file_count": 32,
       "extensions": {
+        "xlsx": 26,
         "nc": 3,
-        "zip": 1,
-        "7z": 1
+        "7z": 1,
+        "ini": 1,
+        "r": 1
       },
       "zenodo": [
         {
           "doi": "10.5281/zenodo.18456618",
           "title": "Global gridded scenarios of residential cooling energy demand to 2050"
         }
+      ],
+      "deliverables": [
+        "D2.2",
+        "D2.6"
       ]
     },
     {
@@ -264,10 +327,13 @@
       "source_folder": null,
       "label": "ISIMIP3b Decadal Climate Forcing (Europe)",
       "description": "This dataset contains BIOCLIM variables (plus huss, sfcwind, rsds) which have been prepared and calculated from the original ISIMIP3b bias-adjusted climate forcing data from 5 GCM models (obtained on 2023-08-07).",
-      "tag": null,
-      "file_count": 6,
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 4.1"
+      },
+      "file_count": 26,
       "extensions": {
-        "zip": 5,
+        "nc": 25,
         "png": 1
       },
       "zenodo": [
@@ -275,35 +341,44 @@
           "doi": "10.5281/zenodo.13259644",
           "title": "Decadal BIOCLIM estimates based on ISIMIP3b climatic forcing data for the European continent"
         }
+      ],
+      "deliverables": [
+        "D4.1"
       ]
     },
-        {
+    {
       "id": "isimip3b-monthly",
       "source_folder": "ISIMIP3b_monthly",
       "label": "ISIMIP3b Monthly Climate Forcing (Europe)",
       "description": "262 files in 5 subfolders: historical, ssp126, ssp245, ssp370, ssp585\n\nFile types: 261 NC, 1 TXT",
-      "tag": null,
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
       "file_count": 262,
       "extensions": {
         "nc": 261,
-        "txt": 1
+        "png": 1
       },
       "zenodo": [
-  {
-    "doi": "10.5281/zenodo.22707485",
-    "title": "Monthly ISIMIP3b climatic forcing aggregates (average) for the European continent"
-  }
-]
+        {
+          "doi": "10.5281/zenodo.22707485",
+          "title": "Monthly ISIMIP3b climatic forcing aggregates (average) for the European continent"
+        }
+      ],
+      "deliverables": [
+        "D2.4"
+      ]
     },
     {
       "id": "wildfire-biodiversity-meta-analysis",
       "source_folder": null,
       "label": "Wildfire & Biodiversity Meta-Analysis",
       "description": "Here is the dataset of a meta-analysis examining the effects of fires on taxa abundances within various European forest fauna and flora. The analysis focuses on how different taxa respond to fire, providing quantitative estimates of these responses using effect sizes. The dataset provides 2192 unique effect sizes from 819 unique taxa reported in 29 studies investigating wild or prescribed fires.",
-     "tag": {
-  "type": "D",
-  "title": "Deliverable 2.4"
-},
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
       "file_count": 2,
       "extensions": {
         "csv": 1,
@@ -314,6 +389,9 @@
           "doi": "10.5281/zenodo.18678145",
           "title": "Wildfire and Biodiversity Meta-Analysis Dataset (European Forests)"
         }
+      ],
+      "deliverables": [
+        "D2.4"
       ]
     },
     {
@@ -322,9 +400,9 @@
       "label": "Extreme Heat Health & Economic Impacts",
       "description": "This dataset contains information collected during the ACCREU (Assessment of Climate Change in Europe) study, carried out at BC3 (Basque Centre for Climate Change) in 2025. The dataset includes six files in Excel format that record estimates of mortality, morbidity and their costs attributable to extreme heat in Europe, at NUTS3 level for people over 65 years of age. These estimates have been made for a historical period and for projections in 2030, 2050 and 2070 under four different climate scenarios (combinations of SSP and RCP).",
       "tag": {
-    "type": "D",
-    "title": "Deliverable 2.3"
-  },
+        "type": "D",
+        "title": "Deliverable 2.3"
+      },
       "file_count": 6,
       "extensions": {
         "xlsx": 6
@@ -334,155 +412,209 @@
           "doi": "10.5281/zenodo.21129554",
           "title": "Future health and economic impacts of extreme heat on older adults: a subnational analysis for Europe"
         }
+      ],
+      "deliverables": [
+        "D2.3"
       ]
     },
-
     {
-  "id": "climate-econometrics-data-code",
-  "source_folder": null,
-  "label": "Climate Econometrics Data & Code",
-  "description": "Data and code supporting the study Rethinking Climate Econometrics: Data Cleaning, Flexible Trend Controls, and Predictive Validation.",
-  "tag": null,
-  "file_count": 1,
-  "extensions": {
-    "zip": 1
-  },
-  "zenodo": [
+      "id": "climate-econometrics-data-code",
+      "source_folder": null,
+      "label": "Climate Econometrics Data & Code",
+      "description": "Data and code supporting the study Rethinking Climate Econometrics: Data Cleaning, Flexible Trend Controls, and Predictive Validation.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.5"
+      },
+      "file_count": 835,
+      "extensions": {
+        "json": 278,
+        "geojson": 122,
+        "png": 122,
+        "svg": 122,
+        "tif": 121,
+        "csv": 65,
+        "txt": 4,
+        "newest": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.15470558",
+          "title": "Data and Code for: Rethinking Climate Econometrics: Data Cleaning, Flexible Trend Controls, and Predictive Validation"
+        }
+      ],
+      "deliverables": [
+        "D2.5"
+      ]
+    },
     {
-      "doi": "10.5281/zenodo.15470558",
-      "title": "Data and Code for: Rethinking Climate Econometrics: Data Cleaning, Flexible Trend Controls, and Predictive Validation"
-    }
-  ]
-},
-{
-  "id": "global-limits-sustainable-irrigation",
-  "source_folder": null,
-  "label": "Global Limits of Sustainable Irrigation",
-  "description": "Data supporting the study The global limits of sustainable irrigation as an adaptation to climate change. The dataset contains spatially explicit and macroregional GLOBIOM results on agricultural production, irrigation, water use and trade under climate change scenarios. The Zenodo record is publicly available, while access to the deposited files is restricted.",
-  "tag": null,
-  "file_count": 0,
-  "extensions": {},
-  "zenodo": [
+      "id": "global-limits-sustainable-irrigation",
+      "source_folder": null,
+      "label": "Global Limits of Sustainable Irrigation",
+      "description": "Data supporting the study The global limits of sustainable irrigation as an adaptation to climate change. The dataset contains spatially explicit and macroregional GLOBIOM results on agricultural production, irrigation, water use and trade under climate change scenarios. The Zenodo record is publicly available, while access to the deposited files is restricted.",
+      "tag": null,
+      "file_count": 0,
+      "extensions": {},
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.19570552",
+          "title": "Data for: The global limits of sustainable irrigation as an adaptation to climate change"
+        }
+      ],
+      "files_restricted": true,
+      "deliverables": []
+    },
     {
-      "doi": "https://doi.org/10.5281/zenodo.19570552",
-      "title": "Data for: The global limits of sustainable irrigation as an adaptation to climate change"
-    }
-  ]
-},
+      "id": "ssp-gridded-population",
+      "source_folder": null,
+      "label": "High-Resolution Gridded Population Projections SSPV3",
+      "description": "High-resolution gridded population dataset used to generate water-withdrawal inputs for the Community Water Model (CWatM). The dataset covers 1960–2100, including historical population and future projections aligned with SSP1–5.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
+      "file_count": 13,
+      "extensions": {
+        "nc": 12,
+        "pdf": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.14521892",
+          "title": "High resolution gridded population aligned with the Shared Socioeconomic Pathways (SSP) v3.0.1"
+        }
+      ],
+      "deliverables": [
+        "D2.2"
+      ]
+    },
     {
-  "id": "ssp-gridded-population",
-  "source_folder": null,
-  "label": "High-Resolution Gridded Population Projections SSPV3",
-  "description": "High-resolution gridded population dataset used to generate water-withdrawal inputs for the Community Water Model (CWatM). The dataset covers 1960–2100, including historical population and future projections aligned with SSP1–5.",
-  "tag": null,
-  "file_count": 13,
-  "extensions": {
-    "nc": 12,
-    "pdf": 1
-  },
-  "zenodo": [
+      "id": "globiom-accreu-nuts2",
+      "source_folder": null,
+      "label": "GLOBIOM Climate Impact and Adaptation Scenarios – European NUTS2",
+      "description": "Dataset supporting ACCREU Deliverable 2.2, European NUTS2-level GLOBIOM results for land use, agricultural production, crop yields, irrigation water withdrawals, bioenergy and roundwood production under ACCREU climate-impact and adaptation scenarios.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
+      "file_count": 10,
+      "extensions": {
+        "csv": 6,
+        "md": 2,
+        "png": 1,
+        "pdf": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.22900647",
+          "title": "GLOBIOM Climate Impact and Adaptation Scenario Results at European NUTS2 Level"
+        }
+      ],
+      "deliverables": [
+        "D2.2"
+      ]
+    },
     {
-      "doi": "10.5281/zenodo.14521892",
-      "title": "High resolution gridded population aligned with the Shared Socioeconomic Pathways (SSP) v3.0.1"
-    }
-  ]
-}, 
-{
-  "id": "globiom-accreu-nuts2",
-  "source_folder": null,
-  "label": "GLOBIOM Climate Impact and Adaptation Scenarios – European NUTS2",
-  "description": "Dataset supporting ACCREU Deliverable 2.2, European NUTS2-level GLOBIOM results for land use, agricultural production, crop yields, irrigation water withdrawals, bioenergy and roundwood production under ACCREU climate-impact and adaptation scenarios.",
-  "tag": {
-    "type": "D",
-    "title": "Deliverable 2.2"
-  },
-  "file_count": 4,
-  "extensions": {
-    "zip": 1,
-    "png": 1,
-    "md": 1,
-    "pdf": 1
-  },
-  "zenodo": [
+      "id": "globiom-accreu-country-regional",
+      "source_folder": null,
+      "label": "GLOBIOM Climate Impact and Adaptation Scenarios – Country and Regional Level",
+      "description": "Dataset supporting ACCREU Deliverable 2.2, containing GLOBIOM results at country and regional level under ACCREU climate impact and adaptation scenarios. The dataset is publicly available through Zenodo.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
+      "file_count": 0,
+      "extensions": {},
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.22918533",
+          "title": "GLOBIOM Climate Impact and Adaptation Scenario Results at Country and Regional Level"
+        }
+      ],
+      "files_restricted": true,
+      "deliverables": [
+        "D2.2"
+      ]
+    },
     {
-      "doi": "10.5281/zenodo.22900647",
-      "title": "GLOBIOM Climate Impact and Adaptation Scenario Results at European NUTS2 Level"
-    }
-  ]
-},
-{
-  "id": "globiom-accreu-country-regional",
-  "source_folder": null,
-  "label": "GLOBIOM Climate Impact and Adaptation Scenarios – Country and Regional Level",
-  "description": "Dataset supporting ACCREU Deliverable 2.2, containing GLOBIOM results at country and regional level under ACCREU climate impact and adaptation scenarios. The dataset is publicly available through Zenodo.",
-  "tag": {
-    "type": "D",
-    "title": "Deliverable 2.2"
-  },
-  "file_count": 0,
-  "extensions": {},
-  "zenodo": [
+      "id": "slr-spatial-modeling-workflow-dataset",
+      "source_folder": null,
+      "label": "Sea level rise inundation spatial modelling workflow and dataset for Europe",
+      "description": "Dataset supporting ACCREU Deliverable 2.4, Sea-level rise inundation maps for European coastal countries, derived by combining DIVACoast relative sea-level-rise projections with MERITDEM elevation data.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.4"
+      },
+      "file_count": 169,
+      "extensions": {
+        "tif": 168,
+        "r": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.22884282",
+          "title": "Sea level rise inundation spatial modelling workflow and dataset for Europe"
+        }
+      ],
+      "deliverables": [
+        "D2.4"
+      ]
+    },
     {
-      "doi": "10.5281/zenodo.22918533",
-      "title": "GLOBIOM Climate Impact and Adaptation Scenario Results at Country and Regional Level"
-    }
-  ]
-},
-{
-  "id": "slr-spatial-modeling-workflow-dataset",
-  "source_folder": null,
-  "label": "Sea level rise inundation spatial modelling workflow and dataset for Europe",
-  "description": "Dataset supporting ACCREU Deliverable 2.4, Sea-level rise inundation maps for European coastal countries, derived by combining DIVACoast relative sea-level-rise projections with MERITDEM elevation data.",
-  "tag": {
-    "type": "D",
-    "title": "Deliverable 2.4"
-  },
-  "file_count": 0,
-  "extensions": {},
-  "zenodo": [
-    {
-      "doi": "10.5281/zenodo.22884282",
-      "title": "Sea level rise inundation spatial modelling workflow and dataset for Europe"
-    }
-  ]
-},   
-{
-  "id": "lido-alberoni-geospatial-baseline",
-  "source_folder": null,
-  "label": "Geospatial Baseline Data for ACCREU Case Study Analysis – Venice Lagoon",
-  "description": "Geospatial baseline data for sea level rise impact analysis of Lido di Venezia and Alberoni Oasis, including digital elevation models, spatial boundaries, metadata and processing workflows.",
-  "tag": {
+      "id": "lido-alberoni-geospatial-baseline",
+      "source_folder": null,
+      "label": "Geospatial Baseline Data for ACCREU Case Study Analysis – Venice Lagoon",
+      "description": "Geospatial baseline data for sea level rise impact analysis of Lido di Venezia and Alberoni Oasis, including digital elevation models, spatial boundaries, metadata and processing workflows.",
+      "tag": {
         "type": "CS",
         "title": "Case Study 3.2"
       },
-  "file_count": 6,
-  "extensions": {
-    "zip": 6
-  },
-  "zenodo": [
+      "file_count": 16,
+      "extensions": {
+        "txt": 3,
+        "cpg": 2,
+        "dbf": 2,
+        "prj": 2,
+        "shp": 2,
+        "shx": 2,
+        "tif": 2,
+        "r": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.22974322",
+          "title": "Geospatial baseline data for sea level rise analysis: Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
+        }
+      ],
+      "deliverables": [
+        "D3.2"
+      ]
+    },
     {
-      "doi": "10.5281/zenodo.22974322",
-      "title": "Geospatial baseline data for sea level rise analysis: Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
-    }
-  ]
-},
-{
-  "id": "lido-alberoni-slr-habitat-loss",
-  "source_folder": null,
-  "label": "Sea Level Rise and Habitat Loss Projections for ACCREU Case Study Analysis – Venice Lagoon",
-  "description": "Spatially explicit projections of sea level rise impacts and habitat loss for Lido di Venezia and Alberoni Oasis from 2015 to 2100 under alternative climate and coastal adaptation scenarios.",
-  "tag": {
+      "id": "lido-alberoni-slr-habitat-loss",
+      "source_folder": null,
+      "label": "Sea Level Rise and Habitat Loss Projections for ACCREU Case Study Analysis – Venice Lagoon",
+      "description": "Spatially explicit projections of sea level rise impacts and habitat loss for Lido di Venezia and Alberoni Oasis from 2015 to 2100 under alternative climate and coastal adaptation scenarios.",
+      "tag": {
         "type": "CS",
         "title": "Case Study 3.2"
       },
-  "file_count": 0,
-  "extensions": {},
-  "zenodo": [
-    {
-      "doi": "10.5281/zenodo.22998429",
-      "title": "Sea level rise and habitat loss projections (2015-2100): Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
+      "file_count": 24,
+      "extensions": {
+        "tif": 18,
+        "csv": 3,
+        "txt": 2,
+        "r": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.22998429",
+          "title": "Sea level rise and habitat loss projections (2015-2100): Lido di Venezia and Alberoni Oasis, Venice Lagoon, Italy"
+        }
+      ],
+      "deliverables": [
+        "D3.2"
+      ]
     }
-  ]
-}  
   ]
 }

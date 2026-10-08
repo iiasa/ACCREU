@@ -3,3 +3,12 @@ download-links.txt
 Thumbs.db
 .vscode/
 .idea/
+
+# Python caches
+__pycache__/
+
+# Assistant proxy: local secrets and tooling, never commit
+worker/.dev.vars
+.dev.vars
+.wrangler/
+node_modules/

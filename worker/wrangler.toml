@@ -1,0 +1,11 @@
+name = "accreu-assistant"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# Pages allowed to call the assistant (the public catalog, plus local testing).
+ALLOWED_ORIGINS = "https://iiasa.github.io,http://127.0.0.1:8000,http://localhost:8000"
+# Free OpenRouter models, tried in order (the next one is used when one is busy).
+MODELS = "nvidia/nemotron-3-ultra-550b-a55b:free,nvidia/nemotron-3-super-120b-a12b:free,google/gemma-4-26b-a4b-it:free,google/gemma-4-31b-it:free"
+
+# The key is a secret, never in this file:  npx wrangler secret put OPENROUTER_API_KEY

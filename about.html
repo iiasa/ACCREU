@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About the ACCREU Data Catalog</title>
+    <meta
+      name="description"
+      content="What the ACCREU Data Catalog contains, where its data comes from, and how datasets link to the ACCREU deliverables."
+    />
+    <link rel="icon" href="assets/logo_ACCREU_flower.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("accreu-theme");
+          if (saved === "light" || saved === "dark") document.documentElement.setAttribute("data-theme", saved);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-logo-chip"><img class="brand-logo" src="assets/accreu-logo.png" alt="ACCREU project logo" /></span>
+        <div>
+          <p class="eyebrow">IIASA Accelerator &middot; About</p>
+          <h1>ACCREU Data Catalog</h1>
+        </div>
+      </div>
+      <nav class="top-links" aria-label="Site links">
+        <a class="sheen" href="https://www.accreu.eu/" target="_blank" rel="noopener">Project site ↗</a>
+        <a class="sheen" href="https://zenodo.org/communities/accreu-project/records" target="_blank" rel="noopener">Zenodo community ↗</a>
+        <a class="sheen top-link-info" href="index.html">← Back to the catalog</a>
+        <button id="themeToggle" class="theme-toggle sheen" type="button" aria-label="Switch between light and dark theme" title="Switch theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+            <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <path d="M12 2.5v2.5M12 19v2.5M21.5 12H19M5 12H2.5M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8M18.4 18.4l-1.8-1.8M7.4 7.4L5.6 5.6" />
+            </g>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="about">
+      <section class="intro-text">
+        <p class="intro-lead">
+          The ACCREU Data Catalog provides a central entry point for discovering and accessing datasets produced
+          within the <a href="https://www.accreu.eu/" target="_blank" rel="noopener">ACCREU project</a>
+          (Assessing Climate Change Risk in EUrope). Explore quantitative data on the economic, physical and
+          biophysical impacts of climate change and adaptation, covering agriculture and land use, water, ecosystems
+          and biodiversity, energy, labour, coastal impacts, wildfire, and the economy, across a wide range of
+          spatial scales and modelling approaches.
+        </p>
+        <p>
+          Throughout the project, IIASA has maintained ACCREU's internal data repository through the
+          <a href="https://accelerator.iiasa.ac.at/" target="_blank" rel="noopener">IIASA Accelerator</a>,
+          supporting the management, sharing and use of data among the 15 ACCREU partners. This catalog builds on
+          that infrastructure to provide a single public entry point for the datasets released by ACCREU partners,
+          and brings together datasets published through established research repositories such as
+          <a href="https://zenodo.org/communities/accreu-project/records" target="_blank" rel="noopener">Zenodo</a>.
+          Each dataset links to the ACCREU deliverable that describes it.
+        </p>
+        <div class="intro-actions">
+          <a class="intro-button sheen" href="index.html">Browse the catalog →</a>
+          <a class="intro-button sheen" href="https://www.accreu.eu/deliverables/" target="_blank" rel="noopener">ACCREU deliverables ↗</a>
+          <a
+            class="intro-button sheen"
+            href="https://iiasa.github.io/COACCH/en/master/index.html#coacch-data-repository"
+            target="_blank"
+            rel="noopener"
+            title="Data from the predecessor COACCH project, kept as a legacy resource"
+            >COACCH Data Repository (legacy) ↗</a
+          >
+        </div>
+      </section>
+
+      <dl class="stat-row" id="statRow">
+        <div class="stat-tile stat-tile-loading"><dt>Loading…</dt><dd>&nbsp;</dd></div>
+      </dl>
+
+      <section class="about-section">
+        <h2>Datasets by deliverable</h2>
+        <p class="about-note">
+          Each dataset is linked to the deliverable(s) that cite its Zenodo record or report its results. Click a
+          deliverable to open the report.
+        </p>
+        <div id="deliverableTable" class="deliverable-table" aria-live="polite"></div>
+      </section>
+
+      <section class="about-section">
+        <h2>How to use the catalog</h2>
+        <ul class="about-list">
+          <li><strong>Zenodo ↗</strong> opens the permanent, citable record. The file list shown in the catalog is the content of that record, including the files inside each zip archive.</li>
+          <li><strong>Request access</strong> marks data held on the IIASA Accelerator that is not public yet: review the data use terms and email the dataset owner.</li>
+          <li><strong>D2.4 ↗</strong> and similar badges open the ACCREU deliverable report for the dataset.</li>
+          <li><strong>Ask AI</strong> finds the datasets, Zenodo records and deliverable report passages that answer your question, and explains them in plain language with numbered links to each source (reports open at the cited page). It only answers from ACCREU material.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <span class="brand-logo-chip brand-logo-chip-sm"><img class="footer-logo" src="assets/accreu-logo.png" alt="ACCREU project logo" /></span>
+        <p>
+          ACCREU has received funding from the European Union's Horizon Europe research and innovation
+          programme under grant agreement No. 101081358. Views and opinions expressed are those of the
+          author(s) only and do not necessarily reflect those of the European Union.
+        </p>
+      </div>
+      <div class="footer-actions">
+        <a class="report-issue sheen" href="mailto:nakhavali@iiasa.ac.at?subject=ACCREU%20Data%20Catalog%20-%20Issue%20report">
+          Report an issue ↗
+        </a>
+      </div>
+    </footer>
+
+    <script src="assets/about.js" defer></script>
+  </body>
+</html>

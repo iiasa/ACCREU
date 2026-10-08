@@ -6,8 +6,10 @@
 
   const state = {
     manifest: null,
+    deliverables: {}, // "D2.4" -> { title, url }
     datasets: new Map(), // id -> dataset (with .paths, .tree once loaded)
-    filter: "all",
+    access: "all", // "all" | "zenodo" | "s3"
+    deliverable: new URLSearchParams(window.location.search).get("deliverable") || "all", // "all" | "none" | "D2.4"…
     searchTimer: 0,
     pendingRequest: null,
   };
@@ -34,16 +36,80 @@
       const text = await pathsResp.text();
       assignPathsToDatasets(text);
 
-      renderStats();
+      try {
+        const deliverablesResp = await fetch("catalog/deliverables.json");
+        if (deliverablesResp.ok) state.deliverables = (await deliverablesResp.json()).deliverables || {};
+      } catch (e) {
+        // Deliverable links are an extra; the catalog still works without them.
+      }
+
+      renderDeliverableFilter();
       renderTree();
+      fillMissingZenodoFiles();
     } catch (error) {
       showError(error.message || String(error));
     }
   }
 
+  // A Zenodo dataset added to the manifest but not yet run through
+  // sync_zenodo.py has no file list. List its top-level files straight from
+  // the Zenodo API (which allows cross-origin requests) so it never shows an
+  // empty 0. Files inside zip archives only appear after the sync script runs.
+  async function fillMissingZenodoFiles() {
+    const pending = state.manifest.datasets.filter(
+      (d) => d.zenodo && !d.source_folder && !d.paths.length && !d.files_restricted
+    );
+    if (!pending.length) return;
+    for (const dataset of pending) {
+      for (const record of dataset.zenodo) {
+        const id = zenodoRecordId(record.doi);
+        if (!id) continue;
+        try {
+          const resp = await fetch(`https://zenodo.org/api/records/${id}`);
+          if (!resp.ok) continue;
+          const meta = await resp.json();
+          if (meta.metadata && meta.metadata.access_right === "restricted") dataset.files_restricted = true;
+          for (const file of meta.files || []) dataset.paths.push(`${dataset.id}/${file.key}`);
+        } catch (e) {
+          // Zenodo unreachable: leave the dataset as it is.
+        }
+      }
+      dataset.file_count = dataset.paths.length;
+    }
+    renderSearchOrTree();
+  }
+
+  function zenodoRecordId(doi) {
+    const match = /zenodo\.(\d+)/.exec(doi || "");
+    return match ? match[1] : null;
+  }
+
+  function normalizeDoi(doi) {
+    return String(doi || "").replace(/^https?:\/\/(dx\.)?doi\.org\//i, "");
+  }
+
+  // The manifest's `deliverables` list (e.g. ["D2.1", "D2.4"]) is the source
+  // of truth. For an entry added without one, fall back to its tag:
+  // "Deliverable 2.4" -> D2.4; "Case Study 3.2" is reported in D3.2.
+  function deliverableIds(dataset) {
+    if (Array.isArray(dataset.deliverables)) return dataset.deliverables;
+    const title = (dataset.tag && dataset.tag.title) || "";
+    const match = /(\d+)\.(\d+)/.exec(title);
+    if (match && /deliverable/i.test(title)) return [`D${match[1]}.${match[2]}`];
+    if (/case study/i.test(title)) return ["D3.2"];
+    return [];
+  }
+
+  function deliverablesFor(dataset) {
+    return deliverableIds(dataset)
+      .map((id) => ({ id, ...(state.deliverables[id] || {}) }))
+      .filter((d) => d.url);
+  }
+
   function cacheElements() {
-    els.statRow = document.getElementById("statRow");
-    els.filterGroup = document.getElementById("filterGroup");
+    els.accessFilter = document.getElementById("accessFilter");
+    els.deliverableFilter = document.getElementById("deliverableFilter");
+    els.deliverableDetail = document.getElementById("deliverableDetail");
     els.searchInput = document.getElementById("searchInput");
     els.clearSearch = document.getElementById("clearSearch");
     els.statusLine = document.getElementById("statusLine");
@@ -68,14 +134,16 @@
       els.searchInput.focus();
     });
 
-    els.filterGroup.addEventListener("click", function (event) {
+    els.accessFilter.addEventListener("click", function (event) {
       const button = event.target.closest(".filter-chip");
       if (!button) return;
-      state.filter = button.dataset.filter;
-      for (const chip of els.filterGroup.querySelectorAll(".filter-chip")) {
-        chip.setAttribute("aria-pressed", String(chip === button));
-      }
+      state.access = button.dataset.filter;
+      syncFilterChips();
       renderSearchOrTree();
+    });
+
+    els.deliverableFilter.addEventListener("change", function () {
+      setDeliverableFilter(els.deliverableFilter.value);
     });
 
     els.themeToggle.addEventListener("click", function () {
@@ -104,7 +172,8 @@
   }
 
   function buildPopoverText(dataset) {
-    return dataset.tag ? `${dataset.tag.title}\n\n${dataset.description}` : dataset.description;
+    const lines = deliverablesFor(dataset).map((d) => `${d.id} — ${d.title}`);
+    return lines.length ? `${lines.join("\n")}\n\n${dataset.description}` : dataset.description;
   }
 
   function openAgreement(dataset) {
@@ -131,74 +200,87 @@
   }
 
   function visibleDatasets() {
-    const all = state.manifest.datasets;
-    if (state.filter === "zenodo") return all.filter((d) => d.zenodo);
-    if (state.filter === "s3") return all.filter((d) => !d.zenodo);
-    if (state.filter === "tag-D") return all.filter((d) => d.tag && d.tag.type === "D");
-    if (state.filter === "tag-W") return all.filter((d) => d.tag && d.tag.type === "W");
-    return all;
+    return state.manifest.datasets.filter((d) => {
+      if (state.access === "zenodo" && !d.zenodo) return false;
+      if (state.access === "s3" && d.zenodo) return false;
+      const ids = deliverableIds(d);
+      if (state.deliverable === "none") return ids.length === 0;
+      if (state.deliverable !== "all") return ids.includes(state.deliverable);
+      return true;
+    });
   }
 
+  // Dropdown with one entry per deliverable that has datasets, in report
+  // order, with counts.
+  function renderDeliverableFilter() {
+    const counts = new Map();
+    let without = 0;
+    for (const d of state.manifest.datasets) {
+      const ids = deliverableIds(d);
+      if (!ids.length) without += 1;
+      for (const id of ids) counts.set(id, (counts.get(id) || 0) + 1);
+    }
+    const order = Object.keys(state.deliverables);
+    const ids = [...counts.keys()].sort((a, b) => {
+      const ia = order.indexOf(a);
+      const ib = order.indexOf(b);
+      return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib) || a.localeCompare(b);
+    });
+    if (state.deliverable !== "all" && state.deliverable !== "none" && !counts.has(state.deliverable)) {
+      state.deliverable = "all";
+    }
+
+    const options = [new Option(`All deliverables (${state.manifest.datasets.length})`, "all")];
+    for (const id of ids) {
+      const info = state.deliverables[id];
+      options.push(new Option(`${id} — ${info ? info.title : ""} (${counts.get(id)})`, id));
+    }
+    if (without) options.push(new Option(`No deliverable (${without})`, "none"));
+    els.deliverableFilter.replaceChildren(...options);
+    syncFilterChips();
+  }
+
+  function setDeliverableFilter(value) {
+    state.deliverable = value || "all";
+    const url = new URL(window.location.href);
+    if (state.deliverable === "all") url.searchParams.delete("deliverable");
+    else url.searchParams.set("deliverable", state.deliverable);
+    window.history.replaceState(null, "", url);
+    syncFilterChips();
+    renderSearchOrTree();
+  }
+
+  function syncFilterChips() {
+    for (const chip of els.accessFilter.querySelectorAll(".filter-chip")) {
+      chip.setAttribute("aria-pressed", String(chip.dataset.filter === state.access));
+    }
+    els.deliverableFilter.value = state.deliverable;
+    // Under the dropdown: the selected deliverable's report link.
+    const info = state.deliverables[state.deliverable];
+    els.deliverableDetail.hidden = !info;
+    if (info) {
+      const link = document.createElement("a");
+      link.href = info.url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = `Open the ${state.deliverable} report ↗`;
+      els.deliverableDetail.replaceChildren(link);
+    }
+  }
+
+  // Small D / CS marker; clicking it filters to the dataset's main deliverable.
   function createTagIcon(dataset) {
+    const primary = deliverableIds(dataset)[0];
     const icon = document.createElement("button");
     icon.type = "button";
     icon.className = "dataset-tag-icon";
-    icon.textContent = dataset.tag.type;
-    icon.title = `Filter by ${dataset.tag.title}`;
+    icon.textContent = dataset.tag && dataset.tag.type ? dataset.tag.type : "D";
+    icon.title = `Show all datasets of ${primary}`;
     icon.addEventListener("click", (event) => {
       event.stopPropagation();
-      const filterValue = `tag-${dataset.tag.type}`;
-      state.filter = state.filter === filterValue ? "all" : filterValue;
-      for (const chip of els.filterGroup.querySelectorAll(".filter-chip")) {
-        chip.setAttribute("aria-pressed", "false");
-      }
-      renderSearchOrTree();
+      setDeliverableFilter(state.deliverable === primary ? "all" : primary);
     });
     return icon;
-  }
-
-  function renderStats() {
-    const all = state.manifest.datasets;
-    const zenodoCount = all.filter((d) => d.zenodo).length;
-    const rows = [
-      ["Files cataloged", state.manifest.total_files],
-      ["Datasets", all.length],
-      ["On Zenodo", `${zenodoCount} of ${all.length}`],
-    ];
-    const fragment = document.createDocumentFragment();
-    for (const [label, value] of rows) {
-      const tile = document.createElement("div");
-      tile.className = "stat-tile";
-      const dt = document.createElement("dt");
-      const dd = document.createElement("dd");
-      dt.textContent = label;
-      if (typeof value === "number") {
-        animateCount(dd, value);
-      } else {
-        dd.textContent = value;
-      }
-      tile.append(dt, dd);
-      fragment.appendChild(tile);
-    }
-    els.statRow.replaceChildren(fragment);
-  }
-
-  function animateCount(el, end) {
-    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion || !window.requestAnimationFrame) {
-      el.textContent = formatNumber(end);
-      return;
-    }
-    el.textContent = "0";
-    const duration = 900;
-    const start = performance.now();
-    function tick(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = formatNumber(Math.round(end * eased));
-      if (progress < 1) window.requestAnimationFrame(tick);
-    }
-    window.requestAnimationFrame(tick);
   }
 
   function renderSearchOrTree() {
@@ -214,7 +296,14 @@
 
   function renderTree() {
     const datasets = visibleDatasets();
-    els.statusLine.textContent = `${formatNumber(datasets.length)} dataset${datasets.length === 1 ? "" : "s"} shown`;
+    const files = datasets.reduce((sum, d) => sum + (d.file_count || 0), 0);
+    const scope =
+      state.deliverable === "all"
+        ? ""
+        : state.deliverable === "none"
+          ? " · without a deliverable"
+          : ` · ${state.deliverable}${state.deliverables[state.deliverable] ? ` — ${state.deliverables[state.deliverable].title}` : ""}`;
+    els.statusLine.textContent = `${formatNumber(datasets.length)} dataset${datasets.length === 1 ? "" : "s"} · ${formatNumber(files)} files${scope}`;
     const fragment = document.createDocumentFragment();
     for (const dataset of datasets) {
       fragment.appendChild(createDatasetElement(dataset));
@@ -244,7 +333,7 @@
     const mainLine = document.createElement("span");
     mainLine.className = "dataset-title-main";
 
-    if (dataset.tag) {
+    if (deliverableIds(dataset).length) {
       mainLine.append(createTagIcon(dataset));
     }
 
@@ -283,7 +372,15 @@
     } else {
       const count = document.createElement("span");
       count.className = "count-pill";
-      count.textContent = formatNumber(dataset.file_count);
+      if (dataset.files_restricted && !dataset.file_count) {
+        count.textContent = "restricted";
+        count.title = "The Zenodo record is public, but its files are restricted — request access on Zenodo.";
+      } else {
+        count.textContent = formatNumber(dataset.file_count) + (dataset.files_truncated ? "+" : "");
+        if (dataset.files_truncated) {
+          count.title = "Zenodo's archive preview lists at most 1,000 entries per zip; the full archive holds more.";
+        }
+      }
       summary.append(statusDot, titleWrap, count, actionsWrap);
     }
 
@@ -310,22 +407,40 @@
   const ICON_LOCK =
     '<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>';
 
+  function createDeliverableLinks(dataset) {
+    return deliverablesFor(dataset).map((deliverable) => {
+      const link = document.createElement("a");
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.addEventListener("click", (event) => event.stopPropagation());
+      link.className = "badge badge-deliverable";
+      link.href = deliverable.url;
+      link.title = `ACCREU ${deliverable.id}: ${deliverable.title}`;
+      link.textContent = `${deliverable.id} ↗`;
+      return link;
+    });
+  }
+
   function createDatasetActions(dataset) {
     // Each folder is either a confirmed Zenodo match (its files) or an
     // Accelerator-only folder you request access to — never both, since a
     // folder only gets a Zenodo entry when it's the same files.
+    const deliverableLinks = createDeliverableLinks(dataset);
     if (dataset.zenodo) {
-      return dataset.zenodo.map((record) => {
-        const action = document.createElement("a");
-        action.target = "_blank";
-        action.rel = "noopener";
-        action.addEventListener("click", (event) => event.stopPropagation());
-        action.className = "badge badge-zenodo";
-        action.href = `https://doi.org/${record.doi}`;
-        action.title = record.title;
-        action.textContent = "Zenodo ↗";
-        return action;
-      });
+      return [
+        ...deliverableLinks,
+        ...dataset.zenodo.map((record) => {
+          const action = document.createElement("a");
+          action.target = "_blank";
+          action.rel = "noopener";
+          action.addEventListener("click", (event) => event.stopPropagation());
+          action.className = "badge badge-zenodo";
+          action.href = `https://doi.org/${normalizeDoi(record.doi)}`;
+          action.title = record.title;
+          action.textContent = "Zenodo ↗";
+          return action;
+        }),
+      ];
     }
 
     const requestBtn = document.createElement("button");
@@ -337,7 +452,7 @@
       event.stopPropagation();
       openAgreement(dataset);
     });
-    return [requestBtn];
+    return [...deliverableLinks, requestBtn];
   }
 
   function buildTree(dataset) {

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ACCREU knowledge embedder</title>
+  </head>
+  <body>
+    <p>Used by <code>build_knowledge.py</code> to embed deliverable passages with the same model as the site.</p>
+    <script type="module">
+      import { loadEmbedder } from "../assets/ai-model.js";
+      import { loadSources, buildDocs, embedText, textKey } from "../assets/knowledge.js";
+
+      // The catalog entries exactly as the page builds them: their text
+      // fingerprints and full-precision vectors.
+      window.embedCatalog = async () => {
+        const embed = await loadEmbedder();
+        const texts = buildDocs(await loadSources()).map(embedText);
+        const vectors = [];
+        for (let i = 0; i < texts.length; i += 32) vectors.push(...(await embed(texts.slice(i, i + 32))));
+        return { keys: texts.map(textKey), vectors };
+      };
+
+      // Returns one Int8 vector (as a plain array) per text: components of the
+      // normalized embedding scaled to -127..127.
+      window.embedPassages = async (texts) => {
+        const embed = await loadEmbedder();
+        const out = [];
+        for (let i = 0; i < texts.length; i += 32) {
+          for (const v of await embed(texts.slice(i, i + 32))) out.push(v.map((x) => Math.round(x * 127)));
+        }
+        return out;
+      };
+      window.embedderReady = true;
+    </script>
+  </body>
+</html>
