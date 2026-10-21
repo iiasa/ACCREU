@@ -2,7 +2,7 @@
   "generated_at": "2026-09-10T12:46:12.784Z",
   "source_note": "Generated from an internal export of the IIASA Accelerator (S3) storage for the ACCREU project. The export contained temporary, pre-signed download URLs (valid ~30 minutes); those signatures are intentionally not published here. This catalog lists file names and folder structure only.",
   "catalog_file": "catalog/paths.txt",
-  "total_files": 3743,
+  "total_files": 3713,
   "datasets": [
     {
       "id": "crop-pollination-climate-only",
@@ -121,19 +121,28 @@
     },
     {
       "id": "cmcc-energy",
-      "source_folder": "CMCC_energy",
+      "source_folder": null,
       "label": "CMCC Energy Demand Shocks",
-      "description": "34 files in 2 subfolders: ac_investments, hourly_model\n\nFile types: 33 CSV, 1 DOCX",
+      "description": "Two CMCC records: country-level projections of final energy demand and energy expenditure from climate adaptation, with thermal power-plant heat exposure and outages in Europe; and the cost of residential space cooling (AC investment and electricity expenditure), AC penetration and cooling electricity use by country and NUTS region under ACCREU climate and adaptation scenarios. Each Zenodo record holds a README linking to its data files on the IIASA Accelerator.",
       "tag": {
         "type": "D",
         "title": "Deliverable 2.2"
       },
-      "file_count": 34,
+      "file_count": 4,
       "extensions": {
-        "csv": 33,
-        "docx": 1
+        "md": 2,
+        "pdf": 2
       },
-      "zenodo": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23233428",
+          "title": "Cost of residential space cooling by country under climate and adaptation scenarios"
+        },
+        {
+          "doi": "10.5281/zenodo.23390118",
+          "title": "CMCC Climate Adaptation Energy Dataset"
+        }
+      ],
       "deliverables": [
         "D2.2",
         "D4.1"
@@ -141,19 +150,24 @@
     },
     {
       "id": "glofris-flood",
-      "source_folder": "GLOFRIS_flood",
+      "source_folder": null,
       "label": "GLOFRIS Flood Risk Model Outputs",
-      "description": "27 files, no subfolders\n\nFile types: 26 XLSX, 1 DOCX",
+      "description": "GLOFRIS riverine flood risk: expected annual damages under SSP2 with RCP2.6, 4.5, 6.0 and 8.5 for five GCMs, plus flood protection maintenance costs.",
       "tag": {
         "type": "D",
         "title": "Deliverable 2.1"
       },
-      "file_count": 27,
+      "file_count": 22,
       "extensions": {
-        "xlsx": 26,
+        "xlsx": 21,
         "docx": 1
       },
-      "zenodo": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23157326",
+          "title": "GLOFRIS riverine flood risk and adaptation costs"
+        }
+      ],
       "deliverables": [
         "D2.1"
       ]
@@ -212,17 +226,25 @@
       "id": "cmcc-lab-prod",
       "source_folder": "CMCC_lab_prod",
       "label": "CMCC Labour Productivity Shocks",
-      "description": "3 files, no subfolders\n\nFile types: 3 CSV",
+      "description": "Country-level projections of labour productivity losses from temperature-related heat and cold exposure, by year, climate scenario, quantile and adaptation scenario, for high- and low-exposure sectors, with an EU NUTS2 aggregation for macroeconomic modelling. Zenodo holds the README; the data files are in the public IIASA Accelerator folder.",
       "tag": {
         "type": "D",
-        "title": "Deliverable 2.3"
+        "title": "Deliverable 2.2"
       },
-      "file_count": 3,
+      "file_count": 5,
       "extensions": {
-        "csv": 3
+        "csv": 3,
+        "md": 1,
+        "pdf": 1
       },
-      "zenodo": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23390460",
+          "title": "Labour Productivity Shock Dataset"
+        }
+      ],
       "deliverables": [
+        "D2.2",
         "D2.3",
         "D4.1"
       ]
@@ -615,6 +637,29 @@
       "deliverables": [
         "D3.2"
       ]
+    },
+    {
+      "id": "excess-mortality-projections-by-ssp-rcp-scenario",
+      "source_folder": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23238680",
+          "title": "Country-level projections of excess mortality per SSP-RCP scenario"
+        }
+      ],
+      "label": "Excess Mortality Projections by SSP-RCP Scenario",
+      "description": "The files include projections of total excess mortality due to PM2.5 exposure per EU country (mean estimate and uncertainty intervals) for the years 2010, 2030, 2040, 2050, and 2100. Each file corresponds to one of the following scenarios: SSP1-2.6, SSP2-4.5, and SSP5-8.5.",
+      "deliverables": [
+        "D2.7"
+      ],
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.7"
+      },
+      "file_count": 3,
+      "extensions": {
+        "csv": 3
+      }
     }
   ]
 }
