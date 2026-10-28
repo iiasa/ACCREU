@@ -2,7 +2,7 @@
   "generated_at": "2026-09-10T12:46:12.784Z",
   "source_note": "Generated from an internal export of the IIASA Accelerator (S3) storage for the ACCREU project. The export contained temporary, pre-signed download URLs (valid ~30 minutes); those signatures are intentionally not published here. This catalog lists file names and folder structure only.",
   "catalog_file": "catalog/paths.txt",
-  "total_files": 3713,
+  "total_files": 4075,
   "datasets": [
     {
       "id": "crop-pollination-climate-only",
@@ -122,25 +122,46 @@
     {
       "id": "cmcc-energy",
       "source_folder": null,
-      "label": "CMCC Energy Demand Shocks",
-      "description": "Two CMCC records: country-level projections of final energy demand and energy expenditure from climate adaptation, with thermal power-plant heat exposure and outages in Europe; and the cost of residential space cooling (AC investment and electricity expenditure), AC penetration and cooling electricity use by country and NUTS region under ACCREU climate and adaptation scenarios. Each Zenodo record holds a README linking to its data files on the IIASA Accelerator.",
+      "label": "CMCC Energy Demand Scenarios",
+      "description": "Country-level projections of final energy demand and energy expenditure from climate adaptation, with thermal power-plant heat exposure and outages in Europe. The Zenodo record holds a README linking to its data files on the IIASA Accelerator.",
       "tag": {
         "type": "D",
         "title": "Deliverable 2.2"
       },
-      "file_count": 4,
+      "file_count": 2,
       "extensions": {
-        "md": 2,
-        "pdf": 2
+        "md": 1,
+        "pdf": 1
+      },
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23390118",
+          "title": "CMCC Climate Adaptation Energy Dataset"
+        }
+      ],
+      "deliverables": [
+        "D2.2",
+        "D4.1"
+      ]
+    },
+    {
+      "id": "cost-residential-cooling",
+      "source_folder": null,
+      "label": "Cost of Residential Space Cooling",
+      "description": "Cost of residential space cooling (AC investment and electricity expenditure), AC penetration and cooling electricity use by country and NUTS region under ACCREU climate and adaptation scenarios. The Zenodo record holds a README linking to its data files on the IIASA Accelerator.",
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
+      "file_count": 2,
+      "extensions": {
+        "md": 1,
+        "pdf": 1
       },
       "zenodo": [
         {
           "doi": "10.5281/zenodo.23233428",
           "title": "Cost of residential space cooling by country under climate and adaptation scenarios"
-        },
-        {
-          "doi": "10.5281/zenodo.23390118",
-          "title": "CMCC Climate Adaptation Energy Dataset"
         }
       ],
       "deliverables": [
@@ -247,25 +268,6 @@
         "D2.2",
         "D2.3",
         "D4.1"
-      ]
-    },
-    {
-      "id": "cwatm-rcp4p5",
-      "source_folder": "cwatm_rcp4p5_daily (daily) + CWatM_RCP4p5 (monthly)",
-      "label": "CWatM Discharge & Runoff — RCP4.5",
-      "description": "57 files in 2 subfolders: daily, monthly\n\nFile types: 56 NC, 1 TXT",
-      "tag": {
-        "type": "D",
-        "title": "Deliverable 2.2"
-      },
-      "file_count": 57,
-      "extensions": {
-        "nc": 56,
-        "txt": 1
-      },
-      "zenodo": null,
-      "deliverables": [
-        "D2.2"
       ]
     },
     {
@@ -659,6 +661,104 @@
       "file_count": 3,
       "extensions": {
         "csv": 3
+      }
+    },
+    {
+      "id": "compound-dry-and-hot-events-household-income-poverty-impacts",
+      "source_folder": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23506513",
+          "title": "Estimated impacts of compound dry-and-hot events on household income and at-risk-of-poverty rates"
+        }
+      ],
+      "label": "Compound Dry-and-Hot Events: Household Income & Poverty Impacts",
+      "description": "This dataset contains the results of this publication: Schleypen, J. R., Saeed, F., Zimmer, A., & Brück, T. (2026). Compound dry-and-hot extremes exacerbate income inequality and poverty in Europe. Global Environmental Change. https://doi.org/10.1016/j.gloenvcha.2025.103106 . The research work was undertaken as part of the Assessing Climate Change Risk in Europe (ACCREU) project.",
+      "deliverables": [
+        "D2.3"
+      ],
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.3"
+      },
+      "file_count": 1,
+      "extensions": {
+        "xlsx": 1
+      }
+    },
+    {
+      "id": "cwatm-hydrological-data-rcp4-5-daily-monthly",
+      "source_folder": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23581418",
+          "title": "CWatM RCP4.5 Hydrological Data – Daily and Monthly Outputs"
+        }
+      ],
+      "label": "CWatM Hydrological Data (RCP4.5, Daily & Monthly)",
+      "description": "Dataset Description This dataset provides daily and monthly hydrological simulation outputs from the Community Water Model (CWatM) , generated specifically for the ACCREU (Assessing Climate Change Risk in Europe) project. The simulations follow the ISIMIP3b protocol and use bias-adjusted climate forcing data from five global climate models (GCMs): GFDL-ESM4, IPSL-CM6A-LR, MPI-ESM1-2-HR, MRI-ESM2-0, and UKESM1-0-LL.",
+      "deliverables": [
+        "D2.2"
+      ],
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.2"
+      },
+      "file_count": 2,
+      "extensions": {
+        "md": 1,
+        "html": 1
+      }
+    },
+    {
+      "id": "macroeconomic-assessment-of-climate-change-impacts",
+      "source_folder": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23577131",
+          "title": "Macroeconomic assessment of Climate Change Impacts"
+        }
+      ],
+      "label": "Macroeconomic assessment of Climate Change Impacts",
+      "description": "Macroeconomic assessment of climate change impacts: Sea-level rise, Riverine Floods, Agriculture, Forestry, Labour (Productivity+Supply), Energy Demand, Energy Supply, Biodiversity, Wild Fires plus compounded assessment of all impacts",
+      "deliverables": [
+        "D4.2"
+      ],
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 4.2"
+      },
+      "file_count": 2,
+      "extensions": {
+        "7z": 1,
+        "csv": 1
+      }
+    },
+    {
+      "id": "pollination-shocks-on-european-crop-yields",
+      "source_folder": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23529105",
+          "title": "ACCREU_Pollination_Shocks_on_European_Crop_Yields_Dataset"
+        }
+      ],
+      "label": "Pollination Shocks on European Crop Yields",
+      "description": "GitHub repository with data description at : gabrielemansi/ACCREU_Pollination_Shocks_on_European_Crop_Yields_Dataset # ACCREU_Pollination_Shocks_on_European_Crop_Yields_Dataset This public folder contains NUTS 3-level datasets describing projected crop yields shocks associated with changes in pollination services.",
+      "deliverables": [
+        "D4.1"
+      ],
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 4.1"
+      },
+      "file_count": 414,
+      "extensions": {
+        "ini": 104,
+        "csv": 103,
+        "rds": 103,
+        "xlsx": 103,
+        "md": 1
       }
     }
   ]
