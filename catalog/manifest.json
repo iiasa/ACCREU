@@ -2,7 +2,7 @@
   "generated_at": "2026-09-10T12:46:12.784Z",
   "source_note": "Generated from an internal export of the IIASA Accelerator (S3) storage for the ACCREU project. The export contained temporary, pre-signed download URLs (valid ~30 minutes); those signatures are intentionally not published here. This catalog lists file names and folder structure only.",
   "catalog_file": "catalog/paths.txt",
-  "total_files": 4075,
+  "total_files": 4101,
   "datasets": [
     {
       "id": "crop-pollination-climate-only",
@@ -758,6 +758,55 @@
         "csv": 103,
         "rds": 103,
         "xlsx": 103,
+        "md": 1
+      }
+    },
+    {
+      "id": "dutch-business-flood-risk-and-insurance",
+      "source_folder": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23703345",
+          "title": "Expected annual flood damage, insurance premiums, insurance uptake, adaptation effort, and protection gap for businesses in Dutch NUTS3 regions"
+        }
+      ],
+      "label": "Dutch Business Flood Risk and Insurance",
+      "description": "Expected annual flood damage, insurance premiums, insurance uptake, adaptation effort, and the remaining protection gap for businesses in Dutch NUTS3 regions. Results cover seven sectors in 2025, 2050, and 2080. Supports ACCREU Deliverable 2.5 and Case Study 5.2.",
+      "deliverables": [
+        "D2.5"
+      ],
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 2.5"
+      },
+      "file_count": 25,
+      "extensions": {
+        "csv": 20,
+        "txt": 4,
+        "zip": 1
+      }
+    },
+    {
+      "id": "coin-int-macroeconomic-impacts-and-adaptation",
+      "source_folder": null,
+      "zenodo": [
+        {
+          "doi": "10.5281/zenodo.23765662",
+          "title": "ACCREU / COIN-INT Macroeconomic Impacts and Adaptation Dataset"
+        }
+      ],
+      "label": "COIN-INT Macroeconomic Impacts and Adaptation",
+      "description": "COIN-INT2.0 simulations of real GDP, welfare, and public tax revenues for 25 European regions, 2020-2080 at five-year intervals, under RCP2.6, RCP4.5, and RCP7.0 and low, medium, and high adaptation levels. Supports ACCREU Deliverables 4.2 and 4.3. Zenodo holds a README linking to documentation and data access for six Excel files.",
+      "deliverables": [
+        "D4.2",
+        "D4.3"
+      ],
+      "tag": {
+        "type": "D",
+        "title": "Deliverable 4.2"
+      },
+      "file_count": 1,
+      "extensions": {
         "md": 1
       }
     }
