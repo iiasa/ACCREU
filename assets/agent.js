@@ -324,12 +324,16 @@ async function search(knowledge, query, onlyDeliverable) {
   const maxKeyword = Math.max(...keyword, 0);
   let semantic = null;
   let queryVector = null;
-  try {
-    const vectors = await embedDocs(knowledge);
-    [queryVector] = await (await loadEmbedder(onProgress))([QUERY_PREFIX + expandQuery(query)]);
-    semantic = vectors.map((v) => dot(queryVector, v));
-  } catch (e) {
-    console.warn("ACCREU assistant: model unavailable, using keyword search:", e);
+  if (knowledge.vectors) {
+    try {
+      [queryVector] = await (await loadEmbedder(onProgress))([QUERY_PREFIX + expandQuery(query)]);
+      semantic = knowledge.vectors.map((v) => dot(queryVector, v));
+    } catch (e) {
+      console.warn("ACCREU assistant: model unavailable, using keyword search:", e);
+    }
+  } else {
+    // Return keyword matches while the semantic model warms in the background.
+    embedDocs(knowledge).catch(() => {});
   }
 
   const scored = knowledge.docs.map((doc, i) => {
@@ -505,11 +509,13 @@ async function answer(question) {
       reply.replaceChildren(renderAnswer(text, items, final));
       if (atBottom) els.log.scrollTop = els.log.scrollHeight;
     };
+    if (items.length) show("These sources match your question. Preparing a short explanation...", true);
     try {
-      const text = await askModel(question, items, (partial) => {
+      const onText = (partial) => {
         cancelAnimationFrame(frame);
         frame = requestAnimationFrame(() => show(partial, false));
-      });
+      };
+      const text = await askModel(question, items, onText);
       cancelAnimationFrame(frame);
       show(text, true);
       history.push({ role: "user", content: question }, { role: "assistant", content: text });
@@ -524,6 +530,8 @@ async function answer(question) {
       }
       if (reply) reply.remove();
       console.warn("ACCREU assistant: AI service unavailable, answering by search:", error);
+    } finally {
+      els.progress.hidden = true;
     }
   }
 
@@ -540,7 +548,7 @@ async function answer(question) {
     return;
   }
   lastItems = items;
-  const quotes = await bestSentences(items.map((it) => it.text), topic || question, result.semantic);
+  const quotes = await bestSentences(items.map((it) => it.text), topic || question, result.semantic && Boolean(ASSISTANT_URL));
   const reply = addMessage("assistant", leadSentence(items));
   const wrap = document.createElement("div");
   wrap.className = "agent-sources";

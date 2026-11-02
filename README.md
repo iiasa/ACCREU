@@ -16,7 +16,7 @@ the datasets and the deliverables.
 | `catalog/deliverables.json` | the public ACCREU deliverables and their PDF links |
 | `catalog/knowledge/` | the assistant's search index (built by `build_knowledge.py`) |
 | `add_dataset.py` | adds a dataset (see below) |
-| `worker/` | the assistant's proxy, which keeps the AI key secret (see `worker/README.md`) |
+| `worker/` | optional hosted assistant proxy (disabled by default; see `worker/README.md`) |
 
 ## Adding a dataset
 
@@ -111,8 +111,23 @@ If `git push` is rejected because GitHub has newer commits, run `git pull`, then
    (Apache-2.0) in `assets/vendor/transformers/`. It runs in a background worker, so
    the page never freezes. It matches the question by meaning against the catalog,
    the ACCREU Zenodo community and about 3,600 passages of the deliverable reports.
-2. **Writing the answer, through the proxy.** The question and those sources go to
-   the Cloudflare Worker in [worker/](worker/). The Worker holds the OpenRouter key as
-   a secret and asks a free hosted model (NVIDIA Nemotron 3 Ultra first) to answer
-   from the sources only, citing them as [1], [2]. The answer is streamed, and each
-   citation links to its source (reports open at the cited page).
+2. **Writing an answer on a CPU backend.** The optional native service in
+   [backend/](backend/) runs Liquid LFM2.5-1.2B through Ollama with GPU use disabled.
+   It receives the question, recent chat turns and selected source excerpts, then
+   streams a concise answer with numbered source links. Visitors do not download
+   a generation model. See [backend/README.md](backend/README.md) for setup and
+   deployment. Its OpenAI-compatible adapter can also connect to LiteRT-LM.
+
+The assistant shows source matches before the explanation. Keyword search is
+available while the semantic index warms up. If the backend is absent or fails,
+source quotations remain available. Generated answers can contain mistakes;
+check their linked sources.
+
+`assets/agent-config.js` holds the public backend address. Its empty default keeps
+source-only answers until a backend is deployed. GitHub Pages serves the catalogue
+files and cannot run a CPU model. The original Cloudflare/OpenRouter proxy in
+[worker/](worker/) remains an alternative.
+
+Run the retrieval and backend checks with Node.js:
+
+    node --test tests/*.test.mjs
