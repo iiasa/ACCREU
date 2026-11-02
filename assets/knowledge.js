@@ -77,7 +77,7 @@ export function buildDocs({ manifest, deliverables, pathsText, records }) {
         fileSamples.has(d.id) ? `Example files: ${fileSamples.get(d.id).join(", ")}.` : "",
       ].filter(Boolean).join(" "),
       url: zenodo[0] ? zenodo[0].url : `index.html?deliverable=${encodeURIComponent(ids[0] || "all")}`,
-      text: [d.label, ...zenodo.map((r) => r.title), d.description].join(". "),
+      text: [d.label, ...zenodo.map((r) => r.title), ...ids.map((id) => `${id}: ${(deliverables[id] || {}).title || ""}`), d.description].join(". "),
     });
   }
 

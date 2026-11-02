@@ -295,8 +295,9 @@ function bm25(knowledge, query) {
 // ---------- search ----------
 
 // Everyday words mapped to the terms the ACCREU reports use, appended to the
-// question before it is embedded.
+// question for both keyword search and embedding.
 const EXPANSIONS = [
+  [/\bhealth\b/i, "mortality, morbidity"],
   [/\b(older|elderly|old) (people|persons|adults|population)\b|\belderly\b|\bpensioners?\b/i, "people aged 65 and over, older adults, elderly"],
   [/\bkids?\b|\bchildren\b/i, "children, young people"],
   [/\bslr\b/i, "sea-level rise"],
@@ -319,7 +320,7 @@ const CATALOG_SURE = 0.65;
 const PASSAGE_SURE = 0.7;
 
 async function search(knowledge, query, onlyDeliverable) {
-  const keyword = bm25(knowledge, query);
+  const keyword = bm25(knowledge, expandQuery(query));
   const maxKeyword = Math.max(...keyword, 0);
   let semantic = null;
   let queryVector = null;
